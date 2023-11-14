@@ -10,7 +10,8 @@ public class Pacote {
     private int quantidadeMaximaPessoas;
 
     // Construtor
-    public Pacote(String nome, int quantidadeDisponivel, String local, String dataIda, String dataVolta, double preco, int quantidadeMaximaPessoas) {
+    public Pacote(String nome, int quantidadeDisponivel, String local, String dataIda, String dataVolta, double preco,
+            int quantidadeMaximaPessoas) {
         this.nome = nome;
         this.quantidadeDisponivel = quantidadeDisponivel;
         this.local = local;
@@ -75,5 +76,16 @@ public class Pacote {
 
     public void setQuantidadeMaximaPessoas(int quantidadeMaximaPessoas) {
         this.quantidadeMaximaPessoas = quantidadeMaximaPessoas;
+    }
+
+    // Exibindi informações do pacote de viagem
+    public void exibirInformacoes() {
+        System.out.println("Nome do Pacote: " + nome);
+        System.out.println("Quantidade Disponível: " + quantidadeDisponivel);
+        System.out.println("Local: " + local);
+        System.out.println("Data de Ida: " + dataIda);
+        System.out.println("Data de Volta: " + dataVolta);
+        System.out.println("Preço: " + preco);
+        System.out.println("Quantidade Máxima de Pessoas: " + quantidadeMaximaPessoas);
     }
 }
