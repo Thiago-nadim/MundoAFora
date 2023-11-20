@@ -5,9 +5,9 @@ import controllers.SiteControllerImpl;
 import models.SiteImpl;
 
 
-public class Main {
+public class main {
 
-    public static void main(String[] args) {
+    public static void Main(String[] args) {
         SiteImpl site = null;
         int escolha;
         site= LeituraDadosImpl.lerInfoSite();
