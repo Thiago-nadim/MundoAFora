@@ -1,6 +1,6 @@
-package controllers;
+package projeto.controllers;
 
-import models.SiteImpl;
+import projeto.models.SiteImpl;
 
 // vai fazer aq logica de compras, reservas, e login
 public class SiteControllerImpl {
