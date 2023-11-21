@@ -1,6 +1,6 @@
 // vai guardar as collecions , dados do site 
 
-package models;
+package projeto.models;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
