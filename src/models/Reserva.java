@@ -1,5 +1,5 @@
-package projeto.models;
+package models;
 
 public class Reserva {
-
+    
 }
