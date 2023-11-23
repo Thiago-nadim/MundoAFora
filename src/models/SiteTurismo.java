@@ -1,12 +1,13 @@
 // vai guardar as collecions , dados do site 
 
 package models;
-import java.util.ArrayList;
-import java.util.HashMap;
+
 import java.util.List;
 import java.util.Map;
+import java.util.ArrayList;
+import java.util.HashMap;
 
-public class SiteImpl {
+public class SiteTurismo {
     Map<String, Usuario> MapLogin = new HashMap<>();  
     Map<String, Administrador> MapLogin2 = new HashMap<>();  
     List<Pacote> ListPacotes = new ArrayList<>();
@@ -15,7 +16,7 @@ public class SiteImpl {
     private String cpj;
     private String telefone;
 
-    public SiteImpl(String nomeEmpresa, String cpj, String telefone, String contato) {
+    public SiteTurismo(String nomeEmpresa, String cpj, String telefone, String contato) {
         this.nomeEmpresa = nomeEmpresa;
         this.cpj = cpj;
         this.telefone = telefone;

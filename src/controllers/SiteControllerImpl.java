@@ -3,23 +3,23 @@ package controllers;
 import java.util.Scanner;
 
 import models.Administrador;
-import models.SiteImpl;
+import models.SiteTurismo;
 import models.Usuario;
 
 // vai fazer aq logica de compras, reservas, e login
 public class SiteControllerImpl {
     
-    public static void login(SiteImpl site){
+    public static void login(SiteTurismo site){
         LeituraDadosImpl.dadosLogin(site);
         
     }
 
-    public static void cadastrar(SiteImpl site){
+    public static void cadastrar(SiteTurismo site){
         // manualmente
 
     }
 
-    public static void menuUsuario(SiteImpl site, Usuario usuario){
+    public static void menuUsuario(SiteTurismo site, Usuario usuario){
         System.out.println(" *********** MENU DE USUARIO*********");
         System.out.println(" ");
         System.out.println(" ----------------------Para ver acessar futuras viagens digite 1----------------------");
@@ -46,7 +46,7 @@ public class SiteControllerImpl {
 
     }
 
-    public static void menuAdmin(SiteImpl site, Administrador administrador){ 
+    public static void menuAdmin(SiteTurismo site, Administrador administrador){ 
 
         System.out.println(" *********** MENU DE USUARIO*********");
         System.out.println(" ");

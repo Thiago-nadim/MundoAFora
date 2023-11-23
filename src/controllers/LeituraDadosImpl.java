@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.util.Map;
 import java.util.Scanner;
 
-import models.SiteImpl;
+import models.SiteTurismo;
 import models.Usuario;
 
 
@@ -19,10 +19,10 @@ import models.Usuario;
 public class LeituraDadosImpl {
 
     // o construtor do site
-    public static SiteImpl lerInfoSite() {
+    public static SiteTurismo lerInfoSite() {
 
         // Especifique o caminho do arquivo que você deseja ler
-            SiteImpl site = null;
+            SiteTurismo site = null;
             String caminhoArquivo = "arquivosTxt/testeTxt.txt";
 
             // Cria um objeto File para representar o arquivo
@@ -42,7 +42,7 @@ public class LeituraDadosImpl {
                     String[] partes = linha.split(",");
                 
                     if (partes.length >= 4) {
-                        site = new SiteImpl(partes[0].trim(), partes[1].trim(), partes[2].trim(), partes[3].trim());
+                        site = new SiteTurismo(partes[0].trim(), partes[1].trim(), partes[2].trim(), partes[3].trim());
                         System.out.println(linha);
                     } else {
                         System.out.println("Linha inválida: " + linha);
@@ -60,7 +60,7 @@ public class LeituraDadosImpl {
            // fazer a mesma coisa mas nao só apenas ler o construtor do site mas  também inicializar alguns usuarios, pacotes e adm
         }
 
-        public static void leituraUsuario(SiteImpl site){
+        public static void leituraUsuario(SiteTurismo site){
             Usuario usuario = null;
             String caminhoArquivo = "arquivosTxt/leituraUsuario.txt";
             Map<String, Usuario> mapTemporario = site.getMap();
@@ -100,7 +100,7 @@ public class LeituraDadosImpl {
             }
         }
 
-        public static void dadosLogin(SiteImpl site){
+        public static void dadosLogin(SiteTurismo site){
             Scanner scanner1 = new Scanner(System.in);
             Scanner scanner2 = new Scanner(System.in);
 
@@ -129,7 +129,7 @@ public class LeituraDadosImpl {
             System.out.println("Email ou Senha errada, tente novamente!");
         }
 
-        public static void cadastroDados(SiteImpl site ){
+        public static void cadastroDados(SiteTurismo site ){
             // cadastrar manualmente
             Map<String, Usuario> mapTemporario = site.getMap();
             Scanner scanner1 = new Scanner(System.in);

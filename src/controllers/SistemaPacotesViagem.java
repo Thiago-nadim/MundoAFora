@@ -1,7 +1,12 @@
-package models;
+
+//essa classe vai ser usada pelos admin para fazer o crud dos pacotes
+
+package controllers;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+
+import models.Pacote;
 
 public class SistemaPacotesViagem {
       private ArrayList<Pacote> pacotes;

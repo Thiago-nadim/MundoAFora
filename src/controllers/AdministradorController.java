@@ -1,10 +1,10 @@
 package controllers;
 
-import models.SiteImpl;
+import models.SiteTurismo;
 
 public class AdministradorController {
 
-    public static void realizarCadastro(SiteImpl site){
+    public static void realizarCadastro(SiteTurismo site){
         LeituraDadosImpl.cadastroDados(site);
     }
     

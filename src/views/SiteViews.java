@@ -3,12 +3,12 @@ package views;
 import java.security.KeyStore.Entry;
 import java.util.Map;
 
-import models.SiteImpl;
+import models.SiteTurismo;
 import models.Usuario;
 
 public class SiteViews {
 
-    public static void verUsuarios( SiteImpl site){
+    public static void verUsuarios( SiteTurismo site){
         Map<String, Usuario> mapa = site.getMap();
 
         System.out.println("Conteúdo do Map:");
