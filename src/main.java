@@ -4,20 +4,20 @@ import views.SiteViews;
 import controllers.AdministradorController;
 import controllers.LeituraDadosImpl;
 import controllers.SiteControllerImpl;
-import models.SiteImpl;
+import models.SiteTurismo;
 
 
 public class main {
 
     public static void main(String[] args) {
-        SiteImpl site = null;
+        SiteTurismo site = null;
         int escolha;
         site= LeituraDadosImpl.lerInfoSite();
         LeituraDadosImpl.leituraUsuario(site);
 
         do {
             System.out.println(" ********************* Bem Vindo ao site " + site.getNomeEmpresa() + "! ******************");
-            System.out.println(" ----------------------Para fazer o Login digite 1 ----------------------");
+                        System.out.println(" ----------------------Para fazer o Login digite 1 ----------------------");
             System.out.println(" ----------------------Para cadastro digite 2       ----------------------");
             System.out.println(" ");
 
