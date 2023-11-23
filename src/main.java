@@ -17,9 +17,6 @@ public class main {
 
         do {
             System.out.println(" ********************* Bem Vindo ao site " + site.getNomeEmpresa() + "! ******************");
-            System.out.println(" ");
-            System.out.println(" Esse é o nosso menu ");
-            System.out.println(" ");
             System.out.println(" ----------------------Para fazer o Login digite 1 ----------------------");
             System.out.println(" ----------------------Para cadastro digite 2       ----------------------");
             System.out.println(" ");

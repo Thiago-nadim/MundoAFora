@@ -48,7 +48,7 @@ public class SiteControllerImpl {
 
     public static void menuAdmin(SiteImpl site, Administrador administrador){ 
 
-        System.out.println(" *********** MENU DE USUARIO*********");
+        System.out.println(" *********** MENU DE ADMIN*********");
         System.out.println(" ");
         System.out.println(" ----------------------Para ver acessar futuras viagens digite 1----------------------");
         System.out.println(" ----------------------Para editar pacotes digite 2  ----------------------");

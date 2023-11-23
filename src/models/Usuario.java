@@ -11,8 +11,11 @@ public class Usuario extends Pessoa {
         super(ehAdmin, cpf, nome, telefone, email, senha);
     }
     public String getLocalizacao() { return localizacao; }
-  //  public String getSenha() { return senha; }
-  //  public String getEmail() { return email; }
+    public String getCpf() { return senha; }
+    public String getNome() { return senha; }
+    public String getTelefone() { return senha; }
+    public String getEmail() { return email; }
+    public String getSenha() { return senha; }
     public void setLocalizacao(String localizacao) { this.localizacao = localizacao; }
 
 }
