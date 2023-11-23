@@ -8,27 +8,32 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class SiteTurismo {
-    Map<String, Usuario> MapLogin = new HashMap<>();  
-    Map<String, Administrador> MapLogin2 = new HashMap<>();  
-    List<Pacote> ListPacotes = new ArrayList<>();
-    List<Reserva> ListReservas = new ArrayList<>();
+    Map<String, Usuario> MapLogin = new HashMap<>();  // login dos usuarios chave cpf
+    Map<String, Administrador> MapLogin2 = new HashMap<>();  // login dos admins chave cpf
+    List<Pacote> ListPacotes = new ArrayList<>();  //lista de tds pacotes do site
+    List<Reserva> ListReservas = new ArrayList<>(); // lista com todas reservas
     private String nomeEmpresa;
-    private String cpj;
+    private String cnpj;
     private String telefone;
+    private String email;
 
-    public SiteTurismo(String nomeEmpresa, String cpj, String telefone, String contato) {
+    
+
+    public SiteTurismo(String nomeEmpresa, String cnpj, String telefone, String email) {
         this.nomeEmpresa = nomeEmpresa;
-        this.cpj = cpj;
+        this.cnpj = cnpj;
         this.telefone = telefone;
+        this.email=email;
     }
 
     public String getNomeEmpresa() { return nomeEmpresa; }
-    public String getCpj() { return cpj; }
+    public String getCnpj() { return cnpj; }
     public String getTelefone() { return telefone;}
     public Map<String, Usuario> getMap() { return MapLogin; }
     public void setMap(Map<String, Usuario> novoMap) { this.MapLogin = novoMap;}
     public Map<String, Administrador> getMap2() { return MapLogin2; }
     public void setMap2(Map<String, Administrador> novoMap2) { this.MapLogin2 = novoMap2;}
+    public String getEmail() {return email;}
     
     
 }
