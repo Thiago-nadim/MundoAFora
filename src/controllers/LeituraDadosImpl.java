@@ -19,6 +19,7 @@ import models.Usuario;
 public class LeituraDadosImpl {
 
     // o construtor do site
+    
     public static SiteTurismo lerInfoSite() {
 
         // Especifique o caminho do arquivo que você deseja ler
@@ -60,6 +61,8 @@ public class LeituraDadosImpl {
            // fazer a mesma coisa mas nao só apenas ler o construtor do site mas  também inicializar alguns usuarios, pacotes e adm
         }
 
+
+
         public static void leituraUsuario(SiteTurismo site){
             Usuario usuario = null;
             String caminhoArquivo = "arquivosTxt/leituraUsuario.txt";
@@ -81,7 +84,7 @@ public class LeituraDadosImpl {
                     String[] partes = linha.split(",");
                 
                     if (partes.length >= 4) {
-                        usuario = new Usuario(false, partes[0].trim(), partes[1].trim(), partes[2].trim(), partes[3].trim(), partes[4].trim());
+                        usuario = new Usuario(false, partes[0].trim(), partes[1].trim(), partes[2].trim(), partes[3].trim(), partes[4].trim(),partes[5].trim());
                         System.out.println(linha);
                         System.out.println("o nome é: " + usuario.getNome());
                         mapTemporario.put(usuario.getEmail(), usuario); 
@@ -99,6 +102,8 @@ public class LeituraDadosImpl {
                 e.printStackTrace();
             }
         }
+
+
 
         public static void dadosLogin(SiteTurismo site){
             Scanner scanner1 = new Scanner(System.in);
@@ -129,15 +134,17 @@ public class LeituraDadosImpl {
             System.out.println("Email ou Senha errada, tente novamente!");
         }
 
+
+
         public static void cadastroDados(SiteTurismo site ){
             // cadastrar manualmente
             Map<String, Usuario> mapTemporario = site.getMap();
             Scanner scanner1 = new Scanner(System.in);
 
-            System.out.print("ATENÇÃO, informe o seu: cpf, nome, telefone, email, senha. SEPARADOS POR VIRGULA e SEM ESPAÇO\n");
+            System.out.print("ATENÇÃO, informe o seu: cpf, nome, telefone, email, senha e localizacao. SEPARADOS POR VIRGULA e SEM ESPAÇO\n");
             String linha  = scanner1.nextLine();
             String[] partes = linha.split(",");
-            Usuario usuario = new Usuario(false, partes[0].trim(), partes[1].trim(), partes[2].trim(), partes[3].trim(), partes[4].trim());
+            Usuario usuario = new Usuario(false, partes[0].trim(), partes[1].trim(), partes[2].trim(), partes[3].trim(), partes[4].trim(), partes[5].trim());
             mapTemporario.put(usuario.getEmail(), usuario);
             site.setMap(mapTemporario);
             
