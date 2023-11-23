@@ -1,6 +1,7 @@
 package models;
 
 public class Destino {
+    
     private enum CategoriasDest{
         PRAIA, MONTANHA, CIDADE
     }
