@@ -22,7 +22,7 @@ public class SiteControllerImpl {
     public static void menuUsuario(SiteImpl site, Usuario usuario){
         System.out.println(" *********** MENU DE USUARIO*********");
         System.out.println(" ");
-        System.out.println(" ----------------------Para ver acessar futuras viagens digite 1----------------------");
+        System.out.println(" ----------------------Para acessar futuras viagens digite 1----------------------");
         System.out.println(" ----------------------Para acessar Histórico de Compras digite 2 ----------------------");
         System.out.println(" ----------------------Para acessar Pacotes digite 3 ----------------------");
         System.out.println(" ");
@@ -33,6 +33,7 @@ public class SiteControllerImpl {
         switch (numero) {
 
             case 1:
+                System.out.println(usuario.getFutViagens());
             break;
 
             case 2:        
@@ -41,7 +42,6 @@ public class SiteControllerImpl {
             case 3:
             break;
 
-          
         }
 
     }

@@ -1,10 +1,8 @@
 package controllers;
 
 import java.io.BufferedReader;
-import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileReader;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Map;
 import java.util.Scanner;
@@ -142,8 +140,8 @@ public class LeituraDadosImpl {
             Usuario usuario = new Usuario(false, partes[0].trim(), partes[1].trim(), partes[2].trim(), partes[3].trim(), partes[4].trim());
             mapTemporario.put(usuario.getEmail(), usuario);
             site.setMap(mapTemporario);
-
-            System.out.println("Email cadastrado: "+  usuario.getEmail());
+            
+            System.out.println("Email cadastrado: " +  usuario.getEmail());
             System.out.println("Senha cadastrada: " + usuario.getSenha());
 
         }
