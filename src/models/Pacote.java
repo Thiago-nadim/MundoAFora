@@ -15,7 +15,7 @@ public class Pacote {
     private double preco;
     private int qtdMaxPessoas;
     private int idPacote;
-    private CategoriasPct categoria;
+    private String categoria;
 
    
 
@@ -23,7 +23,7 @@ public class Pacote {
 
     // Construtor
     public Pacote(String nomePct, int qtdDispPct, String destino, String dataIda, String dataVolta, double preco,
-            int qtdMaxPessoas, int idPacote, CategoriasPct categorias) {
+            int qtdMaxPessoas, int idPacote, String categorias) {
         this.nomePct = nomePct;
         this.qtdDispPct = qtdDispPct;
         this.destino = destino;
@@ -95,7 +95,7 @@ public class Pacote {
      public int getIdPacote() {
         return idPacote;
     }
-    public CategoriasPct getCategoria() {
+    public String getCategoria() {
         return categoria;
     }
 

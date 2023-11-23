@@ -33,7 +33,7 @@ public class main {
                 case 2:
                     AdministradorController.realizarCadastro(site);
                     // Coloque o código relacionado ao cadastro aqui
-                 
+
                     break;
             }
 
