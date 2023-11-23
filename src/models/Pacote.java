@@ -1,49 +1,63 @@
 package models;
 
+
 public class Pacote {
-    private String nome;
-    private int quantidadeDisponivel;
-    private String local;
+
+    private enum CategoriasPct{
+    AVENTURA,CULTURA,RELAXAMENTO
+    }
+
+    private String nomePct;
+    private int qtdDispPct;
+    private String destino;
     private String dataIda;
     private String dataVolta;
     private double preco;
-    private int quantidadeMaximaPessoas;
+    private int qtdMaxPessoas;
+    private int idPacote;
+    private CategoriasPct categoria;
+
+   
+
+    
 
     // Construtor
-    public Pacote(String nome, int quantidadeDisponivel, String local, String dataIda, String dataVolta, double preco,
-            int quantidadeMaximaPessoas) {
-        this.nome = nome;
-        this.quantidadeDisponivel = quantidadeDisponivel;
-        this.local = local;
+    public Pacote(String nomePct, int qtdDispPct, String destino, String dataIda, String dataVolta, double preco,
+            int qtdMaxPessoas, int idPacote, CategoriasPct categorias) {
+        this.nomePct = nomePct;
+        this.qtdDispPct = qtdDispPct;
+        this.destino = destino;
         this.dataIda = dataIda;
         this.dataVolta = dataVolta;
         this.preco = preco;
-        this.quantidadeMaximaPessoas = quantidadeMaximaPessoas;
+        this.qtdMaxPessoas = qtdMaxPessoas;
+        this.idPacote=idPacote;
+        this.categoria=categorias;
     }
 
     // Métodos de acesso (getters e setters)
     public String getNome() {
-        return nome;
+        return nomePct;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setNome(String nomePct) {
+        this.nomePct = nomePct;
     }
 
     public int getQuantidadeDisponivel() {
-        return quantidadeDisponivel;
+        return qtdDispPct;
     }
 
-    public void setQuantidadeDisponivel(int quantidadeDisponivel) {
-        this.quantidadeDisponivel = quantidadeDisponivel;
+    public void setQuantidadeDisponivel(int qtdDispPct) {
+        this.qtdDispPct = qtdDispPct;
     }
 
     public String getLocal() {
-        return local;
+        return destino;
     }
 
     public void setLocal(String local) {
-        this.local = local;
+        this.destino = local;
     }
 
     public String getDataIda() {
@@ -70,22 +84,31 @@ public class Pacote {
         this.preco = preco;
     }
 
-    public int getQuantidadeMaximaPessoas() {
-        return quantidadeMaximaPessoas;
+    public int getqtdMaxPessoas() {
+        return qtdMaxPessoas;
     }
 
-    public void setQuantidadeMaximaPessoas(int quantidadeMaximaPessoas) {
-        this.quantidadeMaximaPessoas = quantidadeMaximaPessoas;
+    public void setqtdMaxPessoas(int qtdMaxPessoas) {
+        this.qtdMaxPessoas = qtdMaxPessoas;
+    }
+
+     public int getIdPacote() {
+        return idPacote;
+    }
+    public CategoriasPct getCategoria() {
+        return categoria;
     }
 
     // Exibindi informações do pacote de viagem
     public void exibirInformacoes() {
-        System.out.println("Nome do Pacote: " + nome);
-        System.out.println("Quantidade Disponível: " + quantidadeDisponivel);
-        System.out.println("Local: " + local);
+        System.out.println("Nome do Pacote: " + nomePct);
+        System.out.println("Quantidade Disponível: " + qtdDispPct);
+        System.out.println("Local: " + destino);
         System.out.println("Data de Ida: " + dataIda);
         System.out.println("Data de Volta: " + dataVolta);
         System.out.println("Preço: " + preco);
-        System.out.println("Quantidade Máxima de Pessoas: " + quantidadeMaximaPessoas);
+        System.out.println("Quantidade Máxima de Pessoas: " + qtdMaxPessoas);
+        System.out.println("Categoria do pacote" + categoria);
+        System.out.println("Id do pacote:" + idPacote);
     }
 }
