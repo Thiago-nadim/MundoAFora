@@ -1,5 +1,7 @@
 package models;
 
+import java.util.ArrayList;
+
 public class Destino {
     
     private enum CategoriasDest{
@@ -8,14 +10,15 @@ public class Destino {
 
     private String descricao;
     private String imagem;
-    private String atividadesDisp; // aqui é ima lista em vez de string Mudar!
     private CategoriasDest categorias;
+    private ArrayList<String> atividadesDisp; 
+    
+    
     
 
-    public Destino(String descricao, String imagem, String atividadesDisp, CategoriasDest categorias) {
+    public Destino(String descricao, String imagem, CategoriasDest categorias) {
         this.descricao = descricao;
         this.imagem = imagem;
-        this.atividadesDisp = atividadesDisp;
         this.categorias = categorias;
     }
 
@@ -29,10 +32,10 @@ public class Destino {
         return imagem;
     }
 
-
-    public String getAtividadesDisp() {
+    public ArrayList<String> getAtividadesDisp() {
         return atividadesDisp;
     }
+    
 
 
     public CategoriasDest getCategorias() {

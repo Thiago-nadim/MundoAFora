@@ -14,6 +14,8 @@ public class main {
         int escolha;
         site= LeituraDadosImpl.lerInfoSite();
         LeituraDadosImpl.leituraUsuario(site);
+        LeituraDadosImpl.leituraAdmin(site);
+
 
         do {
             System.out.println(" ********************* Bem Vindo ao site " + site.getNomeEmpresa() + "! ******************");

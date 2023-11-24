@@ -15,7 +15,7 @@ public class Pacote {
     private double preco;
     private int qtdMaxPessoas;
     private int idPacote;
-    private String categoria;
+    private CategoriasPct categoria;
 
    
 
@@ -23,7 +23,7 @@ public class Pacote {
 
     // Construtor
     public Pacote(String nomePct, int qtdDispPct, String destino, String dataIda, String dataVolta, double preco,
-            int qtdMaxPessoas, int idPacote, String categorias) {
+            int qtdMaxPessoas, int idPacote, CategoriasPct categoria) {
         this.nomePct = nomePct;
         this.qtdDispPct = qtdDispPct;
         this.destino = destino;
@@ -32,7 +32,7 @@ public class Pacote {
         this.preco = preco;
         this.qtdMaxPessoas = qtdMaxPessoas;
         this.idPacote=idPacote;
-        this.categoria=categorias;
+        this.categoria=categoria;
     }
 
     // Métodos de acesso (getters e setters)
@@ -95,7 +95,7 @@ public class Pacote {
      public int getIdPacote() {
         return idPacote;
     }
-    public String getCategoria() {
+    public CategoriasPct getCategoria() {
         return categoria;
     }
 

@@ -8,8 +8,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class SiteTurismo {
-    Map<String, Usuario> MapLogin = new HashMap<>();  // login dos usuarios chave cpf
-    Map<String, Administrador> MapLogin2 = new HashMap<>();  // login dos admins chave cpf
+    Map<String, Usuario> MapLogin = new HashMap<>();  // login dos usuarios 
+    Map<String, Administrador> MapLogin2 = new HashMap<>();  // login dos admins 
     List<Pacote> ListPacotes = new ArrayList<>();  //lista de tds pacotes do site
     List<Reserva> ListReservas = new ArrayList<>(); // lista com todas reservas
     private String nomeEmpresa;
