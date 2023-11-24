@@ -267,6 +267,46 @@ public class LeituraDadosImpl {
 
         }
     
+        public static void verPacotesDisponiveis( SiteTurismo site){
+            String caminhoArquivo = "arquivosTxt/PacotesDisponiveis.txt";
+
+            File arquivo = new File(caminhoArquivo);
+    
+            try {
+                // Cria um FileReader para ler o arquivo
+                FileReader leitor = new FileReader(arquivo);
+
+                // Cria um BufferedReader para leitura eficiente
+                BufferedReader bufferedReader = new BufferedReader(leitor);
+    
+                String linha;
+    
+                // Lê cada linha do arquivo até o final
+                while ((linha = bufferedReader.readLine()) != null) {
+                    String[] partes = linha.split(",");
+                
+                    if (partes.length >= 7) {
+                        System.out.println("***********" + partes[0].trim() + "***********");
+                        System.out.println("Quantidade Disponivel: " + partes[1].trim() );
+                        System.out.println("Destino: " + partes[2].trim() );
+                        System.out.println("Data de ida: " + partes[3].trim() );
+                        System.out.println("Data de volta: " + partes[4].trim() );
+                        System.out.println("Preço: R$" + partes[5].trim() + ",00" );
+                        System.out.println("Quantidade máxima de pessoas: " + partes[6].trim() );
+                        System.out.println("Id do Pacote: " + partes[7].trim() );
+                        System.out.println();
+                    } else {
+                        System.out.println("Linha inválida: " + linha);
+                    }
+                }                
+    
+                // Fecha o BufferedReader
+                bufferedReader.close();
+    
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+    }
 }
 
 

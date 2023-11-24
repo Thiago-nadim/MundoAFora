@@ -11,6 +11,7 @@ public class SiteTurismo {
     Map<String, Usuario> MapLogin = new HashMap<>();  // login dos usuarios 
     Map<String, Administrador> MapLogin2 = new HashMap<>();  // login dos admins 
     List<Pacote> ListPacotes = new ArrayList<>();  //lista de tds pacotes do site
+    
     List<Reserva> ListReservas = new ArrayList<>(); // lista com todas reservas
     private String nomeEmpresa;
     private String cnpj;
@@ -34,6 +35,13 @@ public class SiteTurismo {
     public Map<String, Administrador> getMap2() { return MapLogin2; }
     public void setMap2(Map<String, Administrador> novoMap2) { this.MapLogin2 = novoMap2;}
     public String getEmail() {return email;}
+    public List<Pacote> getListPacotes() {
+        return ListPacotes;
+    }
+
+    public void setListPacotes(List<Pacote> listPacotes) {
+        ListPacotes = listPacotes;
+    }
     
     
 }
