@@ -18,8 +18,8 @@ public class SiteControllerImpl {
         
     }
 
-    public static void cadastrar(SiteTurismo site){
-        // manualmente
+    public static void cadastrarUsuario(SiteTurismo site){
+        LeituraDadosImpl.cadastroDados(site);
 
     }
 
@@ -38,9 +38,11 @@ public class SiteControllerImpl {
 
             case 1:
                 System.out.println(usuario.getFutViagens());
-            break;
+                break;
+                
+                case 2:       
+                System.out.println(usuario.getHistoricoReservas());
 
-            case 2:        
             break;
 
             case 3:

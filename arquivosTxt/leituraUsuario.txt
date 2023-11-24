@@ -1,3 +1,3 @@
 123456,Mateus Jose,19997361,matheusjose@gmail.com,senha123,sao_paulo
 654123,Damner Augusto,65993324413,damneraugts@gmail.com,senha321,Rj
-
+1,1,1,1,1,1

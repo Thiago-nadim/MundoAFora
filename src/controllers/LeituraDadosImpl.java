@@ -108,7 +108,7 @@ public class LeituraDadosImpl {
 
         public static void leituraAdmin(SiteTurismo site){
             Administrador admin = null;
-            String caminhoArquivo = "arquivosTxt/leitruaAdmin.txt";
+            String caminhoArquivo = "arquivosTxt/leituraAdmin.txt";
             Map<String, Administrador> mapTemporario2 = site.getMap2();
 
             File arquivo = new File(caminhoArquivo);
@@ -162,7 +162,7 @@ public class LeituraDadosImpl {
             //checa usuario
             if (site.getMap().containsKey(email)) {
                 System.out.println("O email '" + email + "' está presente no sistema.");
-                System.out.println(" teste " + site.getMap().get(email).getSenha());
+                // System.out.println(" teste " + site.getMap().get(email).getSenha());
                 boolean tentarNovamente = true;
                 
                 while (tentarNovamente) {
@@ -190,10 +190,10 @@ public class LeituraDadosImpl {
                     return;
                 }
                     
-
+            //checa admin
             if(site.getMap2().containsKey(email)){
                 System.out.println("O email '" + email + "' está presente no sistema.");
-                System.out.println(" teste " + site.getMap2().get(email).getSenha());
+                // System.out.println(" teste " + site.getMap2().get(email).getSenha());
                 boolean tentarNovamente = true;
                 
                  while (tentarNovamente) {
@@ -223,6 +223,9 @@ public class LeituraDadosImpl {
                 
             }
             System.out.println("Email ou Senha errada, tente novamente!");
+            scanner1.close();
+            scanner2.close();
+            scanner3.close();
             return;
         }
 

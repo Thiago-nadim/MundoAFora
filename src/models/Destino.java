@@ -22,6 +22,14 @@ public class Destino {
         this.categorias = categorias;
     }
 
+    @Override
+    public String toString() {
+        
+        return "Descrição"+this.descricao+"\n"+
+                "Imagem"+this.imagem+"\n"+
+                "Categoria"+this.categorias ;
+    }
+
 
     public String getDescricao() {
         return descricao;

@@ -33,8 +33,7 @@ public class main {
                     break;
 
                 case 2:
-                    AdministradorController.realizarCadastro(site);
-                    // Coloque o código relacionado ao cadastro aqui
+                    SiteControllerImpl.cadastrarUsuario(site);
 
                     break;
             }
@@ -43,6 +42,7 @@ public class main {
             System.out.println("");
             escolha = scanner1.nextInt();
         } while (escolha != 0);
-        SiteViews.verUsuarios(site);
+        // SiteViews.verUsuarios(site);
+        System.err.println("fim do programa!");
     }
 }
