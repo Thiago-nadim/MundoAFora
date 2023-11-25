@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.util.Scanner;
 
 import models.Administrador;
+import models.Pacote;
 import models.SiteTurismo;
 import models.Usuario;
 
@@ -72,15 +73,8 @@ public class SiteControllerImpl {
                     String[] partes = linha.split(",");
                 
                     if (partes.length >= 7) {
-                        System.out.println("***********" + partes[0].trim() + "***********");
-                        System.out.println("Quantidade Disponivel: " + partes[1].trim() );
-                        System.out.println("Destino: " + partes[2].trim() );
-                        System.out.println("Data de ida: " + partes[3].trim() );
-                        System.out.println("Data de volta: " + partes[4].trim() );
-                        System.out.println("Preço: R$" + partes[5].trim() + ",00" );
-                        System.out.println("Quantidade máxima de pessoas: " + partes[6].trim() );
-                        System.out.println("Id do Pacote: " + partes[7].trim() );
-                        System.out.println();
+                        Pacote pacote = new Pacote(partes[0].trim(), Integer.parseInt(partes[1].trim()), partes[2].trim(), partes[3].trim(), partes[4].trim(), Double.parseDouble(partes[5].trim()), Integer.parseInt(partes[6].trim()), Integer.parseInt(partes[7].trim()), partes[8].trim());
+                        pacote.exibirInformacoes();
                     } else {
                         System.out.println("Linha inválida: " + linha);
                     }
