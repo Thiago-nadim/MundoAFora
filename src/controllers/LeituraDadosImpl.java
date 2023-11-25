@@ -110,7 +110,7 @@ public class LeituraDadosImpl {
             Administrador admin = null;
             String caminhoArquivo = "arquivosTxt/leituraAdmin.txt";
             Map<String, Administrador> mapTemporario2 = site.getMap2();
-
+    
             File arquivo = new File(caminhoArquivo);
     
             try {
