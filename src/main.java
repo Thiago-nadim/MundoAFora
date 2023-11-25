@@ -26,7 +26,6 @@ public class main {
             Scanner scanner1 = new Scanner(System.in);
             int numero = scanner1.nextInt();
             scanner1.nextLine();
-
             switch (numero) {
                 case 1:
                     System.out.println("  ");
@@ -38,7 +37,7 @@ public class main {
 
                     break;
             }
-
+            scanner1.close();
             System.out.println("Sr(a) quer continuar no menu digite algo diferente de ZERO ");
             System.out.println("");
 

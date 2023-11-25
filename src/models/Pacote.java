@@ -18,17 +18,12 @@ public class Pacote {
     private int idPacote;
     private CategoriasPct categoria;
     
-
-   
-
-    
-
     // Construtor
-    public Pacote(String nomePct, int qtdDispPct, String destino, String dataIda, String dataVolta, double preco,
-            int qtdMaxPessoas, int idPacote, CategoriasPct categoria,boolean disponivel) {
+    public Pacote(String nomePct, boolean disponivel, int qtdDispPct, String destino, String dataIda, String dataVolta, double preco,
+            int qtdMaxPessoas, int idPacote, CategoriasPct categoria) {
         this.nomePct = nomePct;
         this.qtdDispPct = qtdDispPct;
-        this.disponivel=disponivel;
+        this.disponivel = disponivel;
         this.destino = destino;
         this.dataIda = dataIda;
         this.dataVolta = dataVolta;
@@ -36,7 +31,6 @@ public class Pacote {
         this.qtdMaxPessoas = qtdMaxPessoas;
         this.idPacote=idPacote;
         this.categoria=categoria;
-        this.disponivel=true;
     }
 
 

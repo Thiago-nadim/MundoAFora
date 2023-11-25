@@ -199,8 +199,9 @@ public class LeituraDadosImpl {
                  while (tentarNovamente) {
                     
                     if(senha.equals(site.getMap2().get(email).getSenha())){ 
-                        System.out.println("Login realizado com sucesso!/n Logado como admin."); 
-                        SiteControllerImpl.menuAdmin(site,  site.getMap2().get(email)); 
+                        System.out.println("Login realizado com sucesso!");
+                        System.out.println("Logado como admin."); 
+                        SiteControllerImpl.menuAdmin(site,  site.getMap2().get(email));
                         return;
                     }
                     else{
