@@ -132,12 +132,12 @@ public class LeituraDadosImpl {
                         System.out.println("o nome é: " + admin.getNome());
                         mapTemporario2.put(admin.getEmail(),admin); 
                         site.setMap2(mapTemporario2);
-
+                        
                     } else {
                         System.out.println("Linha inválida: " + linha);
                     }
                 }                
-    
+                
                 // Fecha o BufferedReader
                 bufferedReader.close();
     
