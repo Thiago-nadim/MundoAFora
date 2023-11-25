@@ -29,9 +29,9 @@ public class Usuario extends Pessoa {
 
 
     public String getLocalizacao() { return localizacao; }
-    public String getCpf() { return senha; }
-    public String getNome() { return senha; }
-    public String getTelefone() { return senha; }
+    public String getCpf() { return cpf; }
+    public String getNome() { return nome; }
+    public String getTelefone() { return telefone; }
     public String getEmail() { return email; }
     public String getSenha() { return senha; }
     public List<String> getFutViagens() {
