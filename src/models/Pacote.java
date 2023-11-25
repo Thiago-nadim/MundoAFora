@@ -122,17 +122,4 @@ public class Pacote {
         return disponivel;
     }
 
-
-    // Exibindi informações do pacote de viagem
-    public void exibirInformacoes() {
-        System.out.println("Nome do Pacote: " + nomePct);
-        System.out.println("Quantidade Disponível: " + qtdDispPct);
-        System.out.println("Local: " + destino);
-        System.out.println("Data de Ida: " + dataIda);
-        System.out.println("Data de Volta: " + dataVolta);
-        System.out.println("Preço: " + preco);
-        System.out.println("Quantidade Máxima de Pessoas: " + qtdMaxPessoas);
-        System.out.println("Categoria do pacote" + categoria);
-        System.out.println("Id do pacote:" + idPacote);
-    }
 }
