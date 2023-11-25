@@ -8,6 +8,7 @@ public class Pacote {
     }
 
     private String nomePct;
+    private boolean disponivel;
     private int qtdDispPct;
     private String destino;
     private String dataIda;
@@ -23,9 +24,10 @@ public class Pacote {
 
     // Construtor
     public Pacote(String nomePct, int qtdDispPct, String destino, String dataIda, String dataVolta, double preco,
-            int qtdMaxPessoas, int idPacote, String categoria) {
+            int qtdMaxPessoas, int idPacote, String categoria,boolean disponivel) {
         this.nomePct = nomePct;
         this.qtdDispPct = qtdDispPct;
+        this.disponivel=disponivel;
         this.destino = destino;
         this.dataIda = dataIda;
         this.dataVolta = dataVolta;
@@ -33,6 +35,7 @@ public class Pacote {
         this.qtdMaxPessoas = qtdMaxPessoas;
         this.idPacote=idPacote;
         this.categoria=categoria;
+        this.disponivel=true;
     }
 
 
@@ -113,6 +116,11 @@ public class Pacote {
     public String getCategoria() {
         return categoria;
     }
+
+    public boolean isDisponivel() {
+        return disponivel;
+    }
+
 
     // Exibindi informações do pacote de viagem
     public void exibirInformacoes() {
