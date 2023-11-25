@@ -16,7 +16,8 @@ public class Pacote {
     private double preco;
     private int qtdMaxPessoas;
     private int idPacote;
-    private String categoria; //preciso mudar pra string por enquanto pra poder pegar do arquivo
+    private CategoriasPct categoria;
+    
 
    
 
@@ -24,7 +25,7 @@ public class Pacote {
 
     // Construtor
     public Pacote(String nomePct, int qtdDispPct, String destino, String dataIda, String dataVolta, double preco,
-            int qtdMaxPessoas, int idPacote, String categoria,boolean disponivel) {
+            int qtdMaxPessoas, int idPacote, CategoriasPct categoria,boolean disponivel) {
         this.nomePct = nomePct;
         this.qtdDispPct = qtdDispPct;
         this.disponivel=disponivel;
@@ -113,7 +114,7 @@ public class Pacote {
      public int getIdPacote() {
         return idPacote;
     }
-    public String getCategoria() {
+    public CategoriasPct getCategoria() {
         return categoria;
     }
 
@@ -124,16 +125,14 @@ public class Pacote {
 
     // Exibindi informações do pacote de viagem
     public void exibirInformacoes() {
-        System.out.println();
-        System.out.println("*****" + nomePct + "*****");
+        System.out.println("Nome do Pacote: " + nomePct);
         System.out.println("Quantidade Disponível: " + qtdDispPct);
         System.out.println("Local: " + destino);
         System.out.println("Data de Ida: " + dataIda);
         System.out.println("Data de Volta: " + dataVolta);
-        System.out.println("Preço: R$" + preco);
+        System.out.println("Preço: " + preco);
         System.out.println("Quantidade Máxima de Pessoas: " + qtdMaxPessoas);
         System.out.println("Categoria do pacote" + categoria);
         System.out.println("Id do pacote:" + idPacote);
-        System.out.println();
     }
 }

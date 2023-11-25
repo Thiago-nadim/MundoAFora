@@ -7,7 +7,6 @@ import java.io.IOException;
 import java.util.Scanner;
 
 import models.Administrador;
-import models.Pacote;
 import models.SiteTurismo;
 import models.Usuario;
 
@@ -77,34 +76,6 @@ public class SiteControllerImpl {
     }
 
     
-            try {
-                // Cria um FileReader para ler o arquivo
-                FileReader leitor = new FileReader(arquivo);
-
-                // Cria um BufferedReader para leitura eficiente
-                BufferedReader bufferedReader = new BufferedReader(leitor);
-    
-                String linha;
-    
-                // Lê cada linha do arquivo até o final
-                while ((linha = bufferedReader.readLine()) != null) {
-                    String[] partes = linha.split(",");
-                
-                    if (partes.length >= 7) {
-                        Pacote pacote = new Pacote(partes[0].trim(), Integer.parseInt(partes[1].trim()), partes[2].trim(), partes[3].trim(), partes[4].trim(), Double.parseDouble(partes[5].trim()), Integer.parseInt(partes[6].trim()), Integer.parseInt(partes[7].trim()), partes[8].trim());
-                        pacote.exibirInformacoes();
-                    } else {
-                        System.out.println("Linha inválida: " + linha);
-                    }
-                }                
-    
-                // Fecha o BufferedReader
-                bufferedReader.close();
-    
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-    }
 
     public static void menuAdmin(SiteTurismo site, Administrador administrador){ 
         Scanner scanner_1 = new Scanner(System.in);
