@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.util.HashMap;
 
 import models.Administrador;
 import models.SiteTurismo;
@@ -57,7 +58,7 @@ public class SiteControllerImpl {
                 case 2:       
                 System.out.println("O histórico de viagens é o seguinte:");
                 System.out.println(usuario.getHistoricoReservas());
-                System.out.println("Voltar para o Menu?digite 1/ Sair digite 0");
+                System.out.println("Para voltar ao Menu: digite 1 \n Para sair: digite 0");
                 String escolha2=scanner_1.nextLine();
                 if (!escolha2.equals("1")){
                     continuaMenuUser=false;
@@ -68,7 +69,7 @@ public class SiteControllerImpl {
             case 3:
                 System.out.println("Acessando pacotes disponíveis");
                 LeituraDadosImpl.verPacotesDisponiveis(site);
-                System.out.println("Voltar para o Menu?digite 1/ Sair digite 0");
+                System.out.println("Para voltar ao Menu: digite 1 \n Para sair: digite 0");
                 String escolha3=scanner_1.nextLine();
                 if (!escolha3.equals("1")){
                     continuaMenuUser=false;
@@ -89,11 +90,11 @@ public class SiteControllerImpl {
 
         System.out.println(" *********** MENU DE ADMIN*********");
         System.out.println(" ");
-        System.out.println(" ----------------------Para acessar todos pacotes do site digite 1----------------------");
-        System.out.println(" ----------------------Para editar pacotes digite 2  ----------------------");
-        System.out.println(" ----------------------Para criar pacotes digite 3----------------------");
-        System.out.println(" ----------------------Para remover pacotes digite 4----------------------");
-        System.out.println(" ----------------------Para cadastrar Admins---------------------");
+        System.out.println(" ----------------------Para acessar todos pacotes do site digite 1 ----------------------");
+        System.out.println(" ----------------------Para editar pacotes digite 2 ----------------------");
+        System.out.println(" ----------------------Para criar pacotes digite 3 ----------------------");
+        System.out.println(" ----------------------Para remover pacotes digite 4 ----------------------");
+        System.out.println(" ----------------------Para cadastrar Admins digite 5 ---------------------");
 
 
         System.out.println(" ");
@@ -106,7 +107,7 @@ public class SiteControllerImpl {
             
             case 1:
             System.out.println(site.getListPacotes());
-            System.out.println("Voltar para o Menu?digite 1/ Sair digite 0");
+            System.out.println("Para voltar ao Menu: digite 1 \n Para sair: digite 0");
             String escolha1=scanner_1.nextLine();
             if (!escolha1.equals("1")){
                 continuaMenuAdmin=false;
@@ -116,7 +117,7 @@ public class SiteControllerImpl {
             case 2:        
             System.out.println("Qual pacote deseja editar");
             //logiva de edição de pacotes
-            System.out.println("Voltar para o Menu?digite 1/ Sair digite 0");
+            System.out.println("Para voltar ao Menu: digite 1 \n Para sair: digite 0");
             String escolha2=scanner_1.nextLine();
             if (!escolha2.equals("1")){
                 continuaMenuAdmin=false;
@@ -216,7 +217,32 @@ public class SiteControllerImpl {
             break;
 
             case 5:
-            System.out.println("Área de cadastro de admins");
+            System.out.println("Digite os dados do novo Administrador");
+            System.out.println("CPF");
+            String cpf = scanner_1.nextLine();
+            System.out.println("Nome");
+            String nome = scanner_1.nextLine();
+            System.out.println("Telefone");
+            String telefone = scanner_1.nextLine();
+            System.out.println("E-mail");
+            String email = scanner_1.nextLine();
+            System.out.println("Senha");
+            String senha = scanner_1.nextLine();
+
+            //Escrever no txt
+            File arquivo1 = new File( "arquivosTxt/leituraAdmin.txt" );
+            try {
+            FileWriter fw = new FileWriter( arquivo1, true );
+            BufferedWriter bw = new BufferedWriter( fw );
+            bw.newLine();
+            bw.write(cpf + "," + nome + "," + telefone + "," + email + "," + senha);
+
+            bw.close();
+            fw.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            
             //lógica de cadastro de admins
             System.out.println("Voltar para o Menu?digite 1/ Sair digite 0");
             String escolha5=scanner_1.nextLine();

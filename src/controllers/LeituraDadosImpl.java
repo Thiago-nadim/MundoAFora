@@ -45,7 +45,6 @@ public class LeituraDadosImpl {
                 
                     if (partes.length >= 4) {
                         site = new SiteTurismo(partes[0].trim(), partes[1].trim(), partes[2].trim(), partes[3].trim());
-                        System.out.println(linha);
                     } else {
                         System.out.println("Linha inválida: " + linha);
                     }
@@ -86,8 +85,6 @@ public class LeituraDadosImpl {
                 
                     if (partes.length >= 4) {
                         usuario = new Usuario(false, partes[0].trim(), partes[1].trim(), partes[2].trim(), partes[3].trim(), partes[4].trim(),partes[5].trim());
-                        System.out.println(linha);
-                        System.out.println("o nome é: " + usuario.getNome());
                         mapTemporario.put(usuario.getEmail(), usuario); 
                         site.setMap(mapTemporario);
 
@@ -128,11 +125,8 @@ public class LeituraDadosImpl {
                 
                     if (partes.length >= 4) {
                         admin = new Administrador(true, partes[0].trim(), partes[1].trim(), partes[2].trim(), partes[3].trim(), partes[4].trim());
-                        System.out.println(linha);
-                        System.out.println("o nome é: " + admin.getNome());
-                        mapTemporario2.put(admin.getEmail(),admin); 
                         site.setMap2(mapTemporario2);
-                        
+                        mapTemporario2.put(admin.getEmail(),admin);                 
                     } else {
                         System.out.println("Linha inválida: " + linha);
                     }
@@ -236,10 +230,10 @@ public class LeituraDadosImpl {
         public static void cadastroDados(SiteTurismo site ){
             // cadastrar manualmente
             Map<String, Usuario> mapTemporario = site.getMap();
-            Scanner scanner1 = new Scanner(System.in);
+            Scanner scanner_1 = new Scanner(System.in);
 
             System.out.print("ATENÇÃO, informe o seu: cpf, nome, telefone, email, senha e localizacao. SEPARADOS POR VIRGULA e SEM ESPAÇO\n");
-            String linha  = scanner1.nextLine();
+            String linha  = scanner_1.nextLine();
             String[] partes = linha.split(",");
             Usuario usuario = new Usuario(false, partes[0].trim(), partes[1].trim(), partes[2].trim(), partes[3].trim(), partes[4].trim(), partes[5].trim());
             mapTemporario.put(usuario.getEmail(), usuario);
@@ -247,6 +241,23 @@ public class LeituraDadosImpl {
             
             System.out.println("Email cadastrado: " +  usuario.getEmail());
             System.out.println("Senha cadastrada: " + usuario.getSenha());
+            boolean ehAdmin = true;
+            System.out.println("CPF");
+            String cpf = scanner_1.nextLine();
+            System.out.println("Nome");
+            String nome = scanner_1.nextLine();
+            System.out.println("Telefone");
+            String telefone = scanner_1.nextLine();
+            System.out.println("E-mail");
+            String email = scanner_1.nextLine();
+            System.out.println("Senha");
+            String senha = scanner_1.nextLine();
+            System.out.println("Localização");
+            String localizacao = scanner_1.nextLine();
+
+            Usuario usuario1 = new Usuario(ehAdmin, cpf, nome, telefone, email, senha,localizacao);
+
+            
 
         }
 
@@ -256,7 +267,7 @@ public class LeituraDadosImpl {
             Map<String, Administrador> mapTemporario2 = site.getMap2();
             Scanner scanner1 = new Scanner(System.in);
 
-            System.out.print("ATENÇÃO, informe os dados a seguir od admin a ser cadastrado: cpf, nome, telefone, email, senha. SEPARADOS POR VIRGULA e SEM ESPAÇO\n");
+            System.out.print("ATENÇÃO, informe os dados a seguir do admin a ser cadastrado: cpf, nome, telefone, email, senha. SEPARADOS POR VIRGULA e SEM ESPAÇO\n");
             String linha  = scanner1.nextLine();
             String[] partes = linha.split(",");
             Administrador admin = new Administrador(true, partes[0].trim(), partes[1].trim(), partes[2].trim(), partes[3].trim(), partes[4].trim());
