@@ -11,6 +11,7 @@ import java.util.Scanner;
 
 import models.Administrador;
 import models.Pacote;
+import models.Pacote.CategoriasPct;
 import models.SiteTurismo;
 import models.Usuario;
 
@@ -324,23 +325,31 @@ public class LeituraDadosImpl {
         }
         System.out.println("Quantos pacotes estarão disponíveis? ");
         String qtdDispPct = scanner_1.nextLine();
+
         System.out.println("Qual é o destino do Pacote? ");
         String destino = scanner_1.nextLine();
+
         System.out.println("Qual é a data de ida do pacote? (Ex:30/01/2000) ");
         String dataIda = scanner_1.nextLine();
+
         System.out.println("Qual é a data de volta do pacote? (Ex:30/01/2000) ");
         String dataVolta = scanner_1.nextLine();
+
         System.out.println("Qual é o preço do pacote? (Ex:500)");
         String preco = scanner_1.nextLine();
+
         System.out.println("Qual é a quantidade máxima de pessoas que podem fazer parte do pacote? ");
         String qtdMaxPessoas = scanner_1.nextLine();
-        System.out.println("Qual é a categoria do pacote? ");
-        String categoria = scanner_1.nextLine(); //preciso ver como passo isso pra string pra passar pro banco de dados
-        int idPacote = (int)Math.floor(Math.random() * (1001 - 1) + 1);
+
+        System.out.println("Qual é a categoria do pacote? (Aventura, cultura ou relaxamento)");
+        String categoriaStr = scanner_1.nextLine();
+        CategoriasPct categoria = CategoriasPct.valueOf(categoriaStr.toUpperCase());
+
+        int idPacote = (int)Math.floor(Math.random() * (10001 - 1) + 1);
         System.out.println("O id do pacote criado é: " + idPacote);
 
         Pacote pacote = new Pacote(nomePct, dispBoolean, Integer.parseInt(qtdDispPct), destino,
-        dataIda, dataVolta, Double.parseDouble(preco), Integer.parseInt(qtdMaxPessoas), idPacote, null);
+        dataIda, dataVolta, Double.parseDouble(preco), Integer.parseInt(qtdMaxPessoas), idPacote, categoria);
 
         //Escrever no txt
         File arquivo = new File( "arquivosTxt/PacotesDisponiveis.txt" );
@@ -348,8 +357,8 @@ public class LeituraDadosImpl {
         FileWriter fw = new FileWriter( arquivo, true );
         BufferedWriter bw = new BufferedWriter( fw );
         bw.newLine();
-        bw.write(nomePct + "," + qtdDispPct + "," + destino + "," + dataIda + "," + dataVolta + "," + preco + ","
-        + qtdMaxPessoas + "," + idPacote + "," + categoria);
+        bw.write(pacote.getNome() + "," + qtdDispPct + "," + destino + "," + dataIda + "," + dataVolta + "," + preco + ","
+        + qtdMaxPessoas + "," + idPacote + "," + categoriaStr);
 
         bw.close();
         fw.close();
