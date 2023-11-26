@@ -68,7 +68,10 @@ public class SiteControllerImpl {
             case 3:
                 System.out.println("Acessando pacotes disponíveis");
                 LeituraDadosImpl.verPacotesDisponiveis(site);
-                System.out.println("Voltar para o Menu?digite 1/ Sair digite 0");
+                System.out.println("Sair? digite 0");
+                System.out.println("Voltar para o Menu? Digite 1");
+                System.out.println("Filtrar Pacotes? Digite 2");
+                System.out.println("Reservar Pacote? Digite 3");
                 String escolha3=scanner_1.nextLine();
                 if (!escolha3.equals("1")){
                     continuaMenuUser=false;
@@ -124,50 +127,7 @@ public class SiteControllerImpl {
             break;
 
             case 3:
-            System.out.println("Criar um novo Pacote");
-            System.out.println("Qual é o nome do novo Pacote? ");
-            String nomePct = scanner_1.nextLine();
-            System.out.println("O pacote já estará disponível? (sim/não)");
-            String disponivel = scanner_1.nextLine();
-            Boolean dispBoolean = true;
-            if(!disponivel.trim().equalsIgnoreCase("sim")){
-                dispBoolean = false;
-            }
-            System.out.println("Quantos pacotes estarão disponíveis? ");
-            String qtdDispPct = scanner_1.nextLine();
-            System.out.println("Qual é o destino do Pacote? ");
-            String destino = scanner_1.nextLine();
-            System.out.println("Qual é a data de ida do pacote? (Ex:30/01/2000) ");
-            String dataIda = scanner_1.nextLine();
-            System.out.println("Qual é a data de volta do pacote? (Ex:30/01/2000) ");
-            String dataVolta = scanner_1.nextLine();
-            System.out.println("Qual é o preço do pacote? (Ex:500)");
-            String preco = scanner_1.nextLine();
-            System.out.println("Qual é a quantidade máxima de pessoas que podem fazer parte do pacote? ");
-            String qtdMaxPessoas = scanner_1.nextLine();
-            System.out.println("Qual é a categoria do pacote? ");
-            String categoria = scanner_1.nextLine(); //preciso ver como passo isso pra string pra passar pro banco de dados
-            int idPacote = (int)Math.floor(Math.random() * (1001 - 1) + 1);
-            System.out.println("O id do pacote criado é: " + idPacote);
-
-            Pacote pacote = new Pacote(nomePct, dispBoolean, Integer.parseInt(qtdDispPct), destino,
-            dataIda, dataVolta, Double.parseDouble(preco), Integer.parseInt(qtdMaxPessoas), idPacote, null);
-
-            //Escrever no txt
-            File arquivo = new File( "arquivosTxt/PacotesDisponiveis.txt" );
-            try {
-            FileWriter fw = new FileWriter( arquivo, true );
-            BufferedWriter bw = new BufferedWriter( fw );
-            bw.newLine();
-            bw.write(nomePct + "," + qtdDispPct + "," + destino + "," + dataIda + "," + dataVolta + "," + preco + ","
-            + qtdMaxPessoas + "," + idPacote + "," + categoria);
-
-            bw.close();
-            fw.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            
+            AdministradorController.criarPacote(site, scanner_1);
             System.out.println("Voltar para o Menu?digite 1/ Sair digite 0");
             String escolha3=scanner_1.nextLine();
             if (!escolha3.equals("1")){
