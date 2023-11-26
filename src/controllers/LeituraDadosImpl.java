@@ -137,20 +137,20 @@ public class LeituraDadosImpl {
                         partes[2].trim(),  // int
                         partes[3].trim(),           // String
                         partes[4].trim(),           // String
-                        Double.parseDouble(partes[5].trim()),           // String
+                        Double.parseDouble(partes[5].trim()),         // String
                         Integer.parseInt(partes[6].trim()),          // String
                         Integer.parseInt(partes[7].trim()),          // String
                         CategoriasPct.valueOf(partes[8].trim())   // Enum (substitua SeuEnum pelo nome da sua enumeração)
                         
                         );
                        
-                        System.out.println(linha);
+                        // System.out.println(linha);
                         
                         ListTemporaria.add(pacote);
                         site.setListPacotes(ListTemporaria);
                         
                     } else {
-                        System.out.println("Linha inválida: " + linha);
+                        // System.out.println("Linha inválida: " + linha);
                     }
                 }                
                 
