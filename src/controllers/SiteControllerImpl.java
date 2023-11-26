@@ -126,8 +126,10 @@ public class SiteControllerImpl {
                 }
                 break;
 
-                case 2:        
-                System.out.println("Qual pacote deseja editar");
+                case 2:   
+                List<String> linhas = new ArrayList<>();     
+                System.out.println("Qual pacote deseja editar?");
+                String nomePct = scanner_1.nextLine();
                 //logica de edição de pacotes
                 System.out.println("Voltar para o Menu?digite 1/ Sair digite 0");
                 String escolha2=scanner_1.nextLine();
@@ -186,39 +188,15 @@ public class SiteControllerImpl {
                 break;
 
                 case 5:
-                    System.out.println("Digite os dados do novo Administrador");
-                    System.out.println("CPF");
-                    String cpf = scanner_1.nextLine();
-                    System.out.println("Nome");
-                    String nome = scanner_1.nextLine();
-                    System.out.println("Telefone");
-                    String telefone = scanner_1.nextLine();
-                    System.out.println("E-mail");
-                    String email = scanner_1.nextLine();
-                    System.out.println("Senha");
-                    String senha = scanner_1.nextLine();
+                AdministradorController.CadastrarAdmin(site, scanner_1);
 
-                    //Escrever no txt
-                    File arquivo1 = new File( "arquivosTxt/leituraAdmin.txt" );
-                    try {
-                    FileWriter fw = new FileWriter( arquivo1, true );
-                    BufferedWriter bw = new BufferedWriter( fw );
-                    bw.newLine();
-                    bw.write(cpf + "," + nome + "," + telefone + "," + email + "," + senha);
-
-                    bw.close();
-                    fw.close();
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                    
-                    //lógica de cadastro de admins
-                    System.out.println("Voltar para o Menu?digite 1/ Sair digite 0");
-                    String escolha5=scanner_1.nextLine();
-                    if (!escolha5.equals("1")){
-                        continuaMenuAdmin=false;
-                    }
-                    break;
+                //lógica de cadastro de admins
+                System.out.println("Voltar para o Menu?digite 1/ Sair digite 0");
+                String escolha5=scanner_1.nextLine();
+                if (!escolha5.equals("1")){
+                    continuaMenuAdmin=false;
+                }
+                break;
 
                 
                 }

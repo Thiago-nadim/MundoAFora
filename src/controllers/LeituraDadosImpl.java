@@ -240,12 +240,35 @@ public class LeituraDadosImpl {
         Map<String, Usuario> mapTemporario = site.getMap();
         Scanner scanner1 = new Scanner(System.in);
 
-        System.out.print("ATENÇÃO, informe o seu: cpf, nome, telefone, email, senha e localizacao. SEPARADOS POR VIRGULA e SEM ESPAÇO\n");
-        String linha  = scanner1.nextLine();
-        String[] partes = linha.split(",");
-        Usuario usuario = new Usuario(false, partes[0].trim(), partes[1].trim(), partes[2].trim(), partes[3].trim(), partes[4].trim(), partes[5].trim());
+        System.out.println("Digite os seus dados \nCPF:");
+        String cpf = scanner1.nextLine();
+        System.out.println("Nome:");
+        String nome = scanner1.nextLine();
+        System.out.println("Telefone:");
+        String telefone  = scanner1.nextLine();
+        System.out.println("E-mail:");
+        String email  = scanner1.nextLine();
+        System.out.println("Senha:");
+        String senha  = scanner1.nextLine();
+        System.out.println("Localização:");
+        String localizacao  = scanner1.nextLine();
+        Usuario usuario = new Usuario(false, cpf, nome, telefone, email, senha, localizacao);
         mapTemporario.put(usuario.getEmail(), usuario);
         site.setMap(mapTemporario);
+
+        File arquivo1 = new File( "arquivosTxt/leituraUsuario.txt" );
+        try {
+            FileWriter fw = new FileWriter( arquivo1, true );
+            BufferedWriter bw = new BufferedWriter( fw );
+            bw.newLine();
+            bw.write(cpf + "," + nome + "," + telefone + "," + email + "," + senha + "," + localizacao);
+
+            bw.close();
+            fw.close();
+            } catch (IOException e) {
+                    e.printStackTrace();
+            }
+
         
         System.out.println("Email cadastrado: " +  usuario.getEmail());
         System.out.println("Senha cadastrada: " + usuario.getSenha());
@@ -364,6 +387,35 @@ public class LeituraDadosImpl {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public static void CadastrarAdmin (SiteTurismo site, Scanner scanner_1) {
+            System.out.println("Digite os dados do novo Administrador");
+            System.out.println("CPF");
+            String cpf = scanner_1.nextLine();
+            System.out.println("Nome");
+            String nome = scanner_1.nextLine();
+            System.out.println("Telefone");
+            String telefone = scanner_1.nextLine();
+            System.out.println("E-mail");
+            String email = scanner_1.nextLine();
+            System.out.println("Senha");
+            String senha = scanner_1.nextLine();
+
+                    //Escrever no txt
+            File arquivo1 = new File( "arquivosTxt/leituraAdmin.txt" );
+            try {
+            FileWriter fw = new FileWriter( arquivo1, true );
+            BufferedWriter bw = new BufferedWriter( fw );
+            bw.newLine();
+            bw.write(cpf + "," + nome + "," + telefone + "," + email + "," + senha);
+
+            bw.close();
+            fw.close();
+            } catch (IOException e) {
+                    e.printStackTrace();
+            }
+                    
     }
 
     public static void fazerReserva(SiteTurismo site, Usuario usuario, int idPacote, String dataReserva, int qtdPessoas) {
