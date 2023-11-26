@@ -52,7 +52,6 @@ public class LeituraDadosImpl {
             
                 if (partes.length >= 4) {
                     site = new SiteTurismo(partes[0].trim(), partes[1].trim(), partes[2].trim(), partes[3].trim());
-                    System.out.println(linha);
                 } else {
                     System.out.println("Linha inválida: " + linha);
                 }
@@ -93,8 +92,6 @@ public class LeituraDadosImpl {
             
                 if (partes.length >= 4) {
                     usuario = new Usuario(false, partes[0].trim(), partes[1].trim(), partes[2].trim(), partes[3].trim(), partes[4].trim(),partes[5].trim());
-                    System.out.println(linha);
-                    System.out.println("o nome é: " + usuario.getNome());
                     mapTemporario.put(usuario.getEmail(), usuario); 
                     site.setMap(mapTemporario);
 
@@ -135,8 +132,6 @@ public class LeituraDadosImpl {
             
                 if (partes.length >= 4) {
                     admin = new Administrador(true, partes[0].trim(), partes[1].trim(), partes[2].trim(), partes[3].trim(), partes[4].trim());
-                    System.out.println(linha);
-                    System.out.println("o nome é: " + admin.getNome());
                     mapTemporario2.put(admin.getEmail(),admin); 
                     site.setMap2(mapTemporario2);
                     
