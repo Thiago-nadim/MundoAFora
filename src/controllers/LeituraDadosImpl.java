@@ -225,14 +225,14 @@ public class LeituraDadosImpl {
                 }
                 return;
 
-            
+                
+            }
+            scanner1.close();
+            scanner2.close();
+            scanner3.close();
+            System.out.println("Email ou Senha errada, tente novamente!");
+            return;
         }
-        System.out.println("Email ou Senha errada, tente novamente!");
-        scanner1.close();
-        scanner2.close();
-        scanner3.close();
-        return;
-    }
 
 
     
