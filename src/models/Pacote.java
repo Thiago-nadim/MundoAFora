@@ -19,8 +19,7 @@ public class Pacote {
 
     // Construtor
     public Pacote(String nomePct, boolean disponivel, int qtdDispPct, String destino, String dataIda, String dataVolta,
-            double preco,
-            int qtdMaxPessoas, int idPacote, CategoriasPct categoria) {
+            double preco,int qtdMaxPessoas, int idPacote, CategoriasPct categoria) {
         this.nomePct = nomePct;
         this.qtdDispPct = qtdDispPct;
         this.disponivel = disponivel;
