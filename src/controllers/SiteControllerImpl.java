@@ -9,6 +9,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.util.Iterator;
+
 
 import models.Administrador;
 import models.SiteTurismo;
@@ -17,26 +19,27 @@ import models.Pacote;
 
 // vai fazer aq logica de compras, reservas, e login
 public class SiteControllerImpl {
-    
-    public static void login(SiteTurismo site){
+
+    public static void login(SiteTurismo site) {
         LeituraDadosImpl.dadosLogin(site);
-        
+
     }
 
-    public static void cadastrarUsuario(SiteTurismo site){
+    public static void cadastrarUsuario(SiteTurismo site) {
         LeituraDadosImpl.cadastroDados(site);
 
     }
 
-    public static void menuUsuario(SiteTurismo site, Usuario usuario){
-        
+    public static void menuUsuario(SiteTurismo site, Usuario usuario) {
+
         Scanner scanner_1 = new Scanner(System.in);
-        boolean continuaMenuUser=true;
+        boolean continuaMenuUser = true;
         while (continuaMenuUser) {
             System.out.println("                   *********** MENU DE USUARIO*********");
             System.out.println(" ");
             System.out.println(" ----------------------Para acessar futuras viagens digite 1----------------------");
-            System.out.println(" ----------------------Para acessar Histórico de Compras digite 2 ----------------------");
+            System.out.println(
+                    " ----------------------Para acessar Histórico de Compras digite 2 ----------------------");
             System.out.println(" ----------------------Para acessar Pacotes digite 3 ----------------------");
             System.out.println(" ");
             int numero = scanner_1.nextInt();
@@ -93,11 +96,9 @@ public class SiteControllerImpl {
         scanner_1.close();
     }
 
-    
-
-    public static void menuAdmin(SiteTurismo site, Administrador administrador){ 
+    public static void menuAdmin(SiteTurismo site, Administrador administrador) {
         Scanner scanner_1 = new Scanner(System.in);
-        boolean continuaMenuAdmin=true;
+        boolean continuaMenuAdmin = true;
         while (continuaMenuAdmin) {
 
             System.out.println(" *********** MENU DE ADMIN*********");
@@ -108,6 +109,7 @@ public class SiteControllerImpl {
             System.out.println(" ----------------------Digite 4 para remover pacotes ----------------------");
             System.out.println(" ----------------------Digite 5 para cadastrar Admins---------------------");
 
+            System.out.println(" ");
 
             System.out.println(" ");
 
@@ -204,6 +206,7 @@ public class SiteControllerImpl {
         }
         scanner_1.close();
     }
+    
 
     // Método para atualizar arquivo de pacote
     private static void atualizarArquivoPacotes(SiteTurismo site, List<Pacote> listaPacotes) {
@@ -214,7 +217,7 @@ public class SiteControllerImpl {
             BufferedWriter bw = new BufferedWriter(fw);
 
             for (Pacote pacote : listaPacotes) {
-                bw.write(pacote.toFileString()); 
+                bw.write(pacote.toFileString());
                 bw.newLine();
             }
 
