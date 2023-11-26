@@ -39,8 +39,15 @@ public class SiteTurismo {
         return ListPacotes;
     }
 
+
     public void setListPacotes(List<Pacote> listPacotes) {
         ListPacotes = listPacotes;
+    }
+
+    public void addListPacotes(SiteTurismo site, Pacote pacote) {
+        List<Pacote> listPacotes = site.getListPacotes();
+        listPacotes.add(pacote);
+        site.setListPacotes(listPacotes);
     }
     
     

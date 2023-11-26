@@ -6,6 +6,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 
@@ -349,9 +350,11 @@ public class LeituraDadosImpl {
         System.out.println("O id do pacote criado é: " + idPacote);
 
         Pacote pacote = new Pacote(nomePct, dispBoolean, Integer.parseInt(qtdDispPct), destino,
-        dataIda, dataVolta, Double.parseDouble(preco), Integer.parseInt(qtdMaxPessoas), idPacote, categoria);
+        dataIda, dataVolta, Double.parseDouble(preco), Integer.parseInt(qtdMaxPessoas), idPacote, categoria); // cria objeto
 
-        //Escrever no txt
+        site.addListPacotes(site, pacote); // adiciona na lista de pacotes em SiteTurismo
+
+        // Coloca no Banco de dados
         File arquivo = new File( "arquivosTxt/PacotesDisponiveis.txt" );
         try {
         FileWriter fw = new FileWriter( arquivo, true );
@@ -364,6 +367,52 @@ public class LeituraDadosImpl {
         fw.close();
         } catch (IOException e) {
             e.printStackTrace();
+        }
+    }
+
+    public static void fazerReserva(SiteTurismo site, Usuario usuario, int idPacote) {
+        File arquivoEntrada = new File("arquivosTxt/PacotesDisponiveis.txt");
+        File arquivoTemporario = new File("arquivosTxt/Temporario.txt");
+        try (BufferedReader leitor = new BufferedReader(new FileReader(arquivoEntrada));
+        BufferedWriter escritor = new BufferedWriter(new FileWriter(arquivoTemporario))) {
+
+        String linhaAtual;
+        System.out.println(idPacote + "*");
+
+        //arruma banco de dados
+        while ((linhaAtual = leitor.readLine()) != null) {
+            String[] partes = linhaAtual.split(",");
+            if (Integer.parseInt(partes[7].trim()) != idPacote) {
+                System.out.println(partes[7].trim());
+                escritor.write(linhaAtual);
+                escritor.newLine();
+            } else {
+                int qtdDispPct = Integer.parseInt(partes[1]) - 1;
+                String qtdDispPctStr = Integer.toString(qtdDispPct);
+                escritor.write(partes[0] + "," + qtdDispPctStr + "," + partes[2] + "," + partes[3] + "," + partes[4]
+                + "," + partes[5] + "," + partes[6] + "," + partes[7]);
+                escritor.newLine();
+                System.out.println("diferente");
+            }
+        }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        // Renomear o arquivo temporário para substituir o original
+        if (arquivoEntrada.delete() && arquivoTemporario.renameTo(arquivoEntrada)) {
+            System.out.println("Pacote reservado com sucesso.");
+        } else {
+            System.out.println("Erro ao remover a linha.");
+        }
+        //arruma no objeto site
+        List<Pacote> lPacotes = site.getListPacotes();
+        for(Pacote unicoPacote : lPacotes) {
+            int id = unicoPacote.getIdPacote();
+            if (idPacote == id)
+                unicoPacote.setQuantidadeDisponivel(unicoPacote.getQuantidadeDisponivel() - 1);
+                break;
         }
     }
 }
