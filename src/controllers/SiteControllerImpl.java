@@ -6,6 +6,8 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 import models.Administrador;
@@ -174,12 +176,42 @@ public class SiteControllerImpl {
             break;
 
             case 4:
-            System.out.println("Qual pacote deseja remover?");
-            //lógica de remoção de pacote
+            Scanner scanner = new Scanner(System.in);
+
+            System.out.println("Digite o ID do pacote que deseja excluir:");
+            int idPacoteParaExcluir = scanner.nextInt();
+            scanner.nextLine();
+
+            boolean pacoteEncontrado = false;
+
+            // Criando copia da lista de pacotes
+            List<Pacote> listaPacotes = new ArrayList<>(site.getListPacotes());
+
+            for(Pacote pacoteLista : listaPacotes) {
+                if (pacoteLista.getIdPacote() == idPacoteParaExcluir) {
+                    pacoteEncontrado = true;
+                    listaPacotes.remove(pacoteLista);
+
+                    // Atualizar o arquivo PacotesDisponiveis.txt
+                    atualizarArquivoPacotes(site, listaPacotes);
+
+                    System.out.println("Pacote removido com sucesso!");
+                    break;
+                }
+            }
+
+            if (!pacoteEncontrado){
+                System.out.println("Pacote não encontrado.");
+            }
+
+            // Atualizar pacote 
+
+            scanner.close();
+
             System.out.println("Voltar para o Menu?digite 1/ Sair digite 0");
             String escolha4=scanner_1.nextLine();
             if (!escolha4.equals("1")){
-                continuaMenuAdmin=false;
+                continuaMenuAdmin = false;
             }
             break;
 
@@ -197,5 +229,25 @@ public class SiteControllerImpl {
         }
         }
         scanner_1.close();
+    }
+
+    // Método para atualizar arquivo de pacote
+    private static void atualizarArquivoPacotes(SiteTurismo site, List<Pacote> listaPacotes) {
+        File arquivo = new File("arquivosTxt/PacotesDisponiveis.txt");
+
+        try {
+            FileWriter fw = new FileWriter(arquivo);
+            BufferedWriter bw = new BufferedWriter(fw);
+
+            for (Pacote pacote : listaPacotes) {
+                bw.write(pacote.toFileString()); 
+                bw.newLine();
+            }
+
+            bw.close();
+            fw.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
