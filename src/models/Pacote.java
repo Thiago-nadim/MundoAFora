@@ -116,7 +116,7 @@ public class Pacote {
         return disponivel;
     }
 
-    // Adicione este método à classe Pacote
+    // Método para representar o objeto em formato de string
     public String toFileString() {
         String disponibilidade = disponivel ? "true" : "false";
         String categoriaString = categoria.name();
