@@ -17,6 +17,9 @@ public class AdministradorController {
         LeituraDadosImpl.cadastroDados(site);//  (??) isso faz cadastro de usuario e nao de admin 
     }
 
+    public static void EditarPacotes (SiteTurismo site, Scanner scanner_1) {
+       LeituraDadosImpl.EditarPacotes(site, scanner_1); 
+    }
     public static void criarPacote(SiteTurismo site, Scanner scanner_1) {
         LeituraDadosImpl.criarPacoteNovo(site, scanner_1);
     }
