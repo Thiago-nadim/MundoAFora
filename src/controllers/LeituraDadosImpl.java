@@ -12,6 +12,7 @@ import java.util.Scanner;
 
 import models.Administrador;
 import models.Pacote;
+import models.Reserva;
 import models.Pacote.CategoriasPct;
 import models.SiteTurismo;
 import models.Usuario;
@@ -370,14 +371,14 @@ public class LeituraDadosImpl {
         }
     }
 
-    public static void fazerReserva(SiteTurismo site, Usuario usuario, int idPacote) {
+    public static void fazerReserva(SiteTurismo site, Usuario usuario, int idPacote, String dataReserva, int qtdPessoas) {
+
         File arquivoEntrada = new File("arquivosTxt/PacotesDisponiveis.txt");
         File arquivoTemporario = new File("arquivosTxt/Temporario.txt");
         try (BufferedReader leitor = new BufferedReader(new FileReader(arquivoEntrada));
         BufferedWriter escritor = new BufferedWriter(new FileWriter(arquivoTemporario))) {
 
         String linhaAtual;
-        System.out.println(idPacote + "*");
 
         //arruma banco de dados
         while ((linhaAtual = leitor.readLine()) != null) {
@@ -392,12 +393,28 @@ public class LeituraDadosImpl {
                 escritor.write(partes[0] + "," + qtdDispPctStr + "," + partes[2] + "," + partes[3] + "," + partes[4]
                 + "," + partes[5] + "," + partes[6] + "," + partes[7]);
                 escritor.newLine();
-                System.out.println("diferente");
+
+                List<String> futViagens = usuario.getFutViagens();
+                futViagens.add(partes[0]);
+                usuario.setFutViagens(futViagens);
+
             }
         }
 
         } catch (IOException e) {
             e.printStackTrace();
+        }
+        //arruma lista de pacotes site
+        List<Pacote> lPacotes = site.getListPacotes();
+        for(Pacote unicoPacote : lPacotes) {
+            int id = unicoPacote.getIdPacote();
+            if (idPacote == id)
+                unicoPacote.setQuantidadeDisponivel(unicoPacote.getQuantidadeDisponivel() - 1);
+                Reserva reserva = new Reserva(dataReserva, unicoPacote, qtdPessoas, usuario, idPacote);
+                List<Reserva> historicoReservas = usuario.getHistoricoReservas();
+                historicoReservas.add(reserva);
+                usuario.setHistoricoReservas(historicoReservas);
+                break;
         }
 
         // Renomear o arquivo temporário para substituir o original
@@ -406,13 +423,7 @@ public class LeituraDadosImpl {
         } else {
             System.out.println("Erro ao remover a linha.");
         }
-        //arruma no objeto site
-        List<Pacote> lPacotes = site.getListPacotes();
-        for(Pacote unicoPacote : lPacotes) {
-            int id = unicoPacote.getIdPacote();
-            if (idPacote == id)
-                unicoPacote.setQuantidadeDisponivel(unicoPacote.getQuantidadeDisponivel() - 1);
-                break;
-        }
+        
+
     }
 }

@@ -81,7 +81,11 @@ public class SiteControllerImpl {
                         case 2:
                         System.out.println("Digite o id do pacote desejado: ");
                         int id = scanner_1.nextInt();
-                        AdministradorController.realizarReserva(site, usuario, id);
+                        System.out.println("Qual é a data que está fazendo essa reserva? ");
+                        String dataReserva = scanner_1.next();
+                        System.out.println("Para quantas pessoas é a reserva? ");
+                        int qtdePessoas = scanner_1.nextInt();
+                        AdministradorController.realizarReserva(site, usuario, id, dataReserva, qtdePessoas);
                     }
                 break;
             }

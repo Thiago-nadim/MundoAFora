@@ -5,17 +5,17 @@ public class Reserva {
     private String dataReserva;
     private Pacote pctReserva;
     private int qtdePessoas;
-    private Usuario usuarioReserv;
-    private int idReserv;
+    private Usuario usuarioReserva;
+    private int idReserva;
 
     
 
-    public Reserva(String dataReserva,Pacote pctReserva,int qtdePessoas,Usuario usuarioReserv,int idReserv){
+    public Reserva(String dataReserva,Pacote pctReserva,int qtdePessoas,Usuario usuarioReserva,int idReserva){
         this.dataReserva=dataReserva;
         this.pctReserva=pctReserva;
         this.qtdePessoas=qtdePessoas;
-        this.usuarioReserv=usuarioReserv;
-        this.idReserv=idReserv;
+        this.usuarioReserva=usuarioReserva;
+        this.idReserva=idReserva;
     }
 
    @Override
@@ -24,8 +24,8 @@ public class Reserva {
        return "Data da reserva"+ this.dataReserva+"\n"+
                 "Pacote:"+ this.pctReserva +"\n"+
                 "Quantidade de pessoas:"+ this.qtdePessoas+"\n"+
-                "Usuário que efetuou a reserva" + this.usuarioReserv+"\n"+
-                "id da Reserva"+ this.idReserv;
+                "Usuário que efetuou a reserva" + this.usuarioReserva+"\n"+
+                "id da Reserva"+ this.idReserva;
 
    }
 
@@ -43,11 +43,11 @@ public class Reserva {
         return qtdePessoas;
     }
 
-    public Usuario getUsuarioReserv() {
-        return usuarioReserv;
+    public Usuario getUsuarioReserva() {
+        return usuarioReserva;
     }
 
-    public int getIdReserv() {
-        return idReserv;
+    public int getIdReserva() {
+        return idReserva;
     }
 }
