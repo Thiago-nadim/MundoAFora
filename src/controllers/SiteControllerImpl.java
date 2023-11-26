@@ -127,10 +127,10 @@ public class SiteControllerImpl {
             System.out.println("Criar um novo Pacote");
             System.out.println("Qual é o nome do novo Pacote? ");
             String nomePct = scanner_1.nextLine();
-            System.out.println("O pacote já estará disponível? ");
+            System.out.println("O pacote já estará disponível? (sim/não)");
             String disponivel = scanner_1.nextLine();
             Boolean dispBoolean = true;
-            if(!disponivel.equalsIgnoreCase("sim")){
+            if(!disponivel.trim().equalsIgnoreCase("sim")){
                 dispBoolean = false;
             }
             System.out.println("Quantos pacotes estarão disponíveis? ");
@@ -150,7 +150,7 @@ public class SiteControllerImpl {
             int idPacote = (int)Math.floor(Math.random() * (1001 - 1) + 1);
             System.out.println("O id do pacote criado é: " + idPacote);
 
-            Pacote pacote = new Pacote(nomePct, Boolean.parseBoolean(disponivel), Integer.parseInt(qtdDispPct), destino,
+            Pacote pacote = new Pacote(nomePct, dispBoolean, Integer.parseInt(qtdDispPct), destino,
             dataIda, dataVolta, Double.parseDouble(preco), Integer.parseInt(qtdMaxPessoas), idPacote, null);
 
             //Escrever no txt
