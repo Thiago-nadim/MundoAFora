@@ -10,10 +10,11 @@ public class main {
 
     public static void main(String[] args) {
         SiteTurismo site = null;
-        int escolha = 0;
-        site = LeituraDadosImpl.lerInfoSite();
+        int escolha;
+        site= LeituraDadosImpl.lerInfoSite();
         LeituraDadosImpl.leituraUsuario(site);
         LeituraDadosImpl.leituraAdmin(site);
+        Scanner scanner1 = new Scanner(System.in);
 
         do {
             System.out.println(
@@ -22,7 +23,6 @@ public class main {
             System.out.println(" ----------------------Para cadastro digite 2       ----------------------");
             System.out.println(" ");
 
-            Scanner scanner1 = new Scanner(System.in);
             int numero = scanner1.nextInt();
             scanner1.nextLine();
             switch (numero) {
@@ -35,15 +35,18 @@ public class main {
                     SiteControllerImpl.cadastrarUsuario(site);
 
                     break;
+                default:
+                    System.out.println("Entrada inválida!O que deseja fazer?");
             }
-            scanner1.close();
-            System.out.println("Sr(a) quer continuar no menu digite algo diferente de ZERO ");
-            System.out.println("");
+            // 
+            System.out.println("Digite 1 para voltar à tela de login/cadastro.\nDigite 0 para encerrar o programa.");
+            // System.out.println("");
 
-            // escolha = scanner1.nextInt();//ta dando erro nessa linha depois eu corrijo -
-            // thiago nadim
+            
+            escolha = scanner1.nextInt();
+            // scanner1.nextLine();
         } while (escolha != 0);
         // SiteViews.verUsuarios(site);
-        System.err.println("fim do programa!");
+        System.out.println("fim do programa!");
     }
 }

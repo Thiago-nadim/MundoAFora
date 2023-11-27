@@ -88,30 +88,29 @@ public class SiteControllerImpl {
         boolean continuaMenuAdmin = true;
         while (continuaMenuAdmin) {
 
-            System.out.println(" *********** MENU DE ADMIN*********");
-            System.out.println(" ");
-            System.out.println(
-                    " ----------------------Para acessar todos pacotes do site digite 1----------------------");
-            System.out.println(" ----------------------Para editar pacotes digite 2  ----------------------");
-            System.out.println(" ----------------------Para criar pacotes digite 3----------------------");
-            System.out.println(" ----------------------Para remover pacotes digite 4----------------------");
-            System.out.println(" ----------------------Para cadastrar Admins---------------------");
+        System.out.println(" *********** MENU DE ADMIN*********");
+        System.out.println(" ");
+        System.out.println(" ----------------------Digite 1 para acessar todos pacotes do site ----------------------");
+        System.out.println(" ----------------------Digite 2 para editar pacotes   ----------------------");
+        System.out.println(" ----------------------digite 3 para criar pacotes----------------------");
+        System.out.println(" ----------------------Digite 4 para remover pacotes ----------------------");
+        System.out.println(" ----------------------Digite 5 para cadastrar Admins---------------------");
 
             System.out.println(" ");
 
             int numero = scanner_1.nextInt();
             scanner_1.nextLine();
-
-            switch (numero) {
-
-                case 1:
-                    System.out.println(site.getListPacotes());
-                    System.out.println("Voltar para o Menu?digite 1/ Sair digite 0");
-                    String escolha1 = scanner_1.nextLine();
-                    if (!escolha1.equals("1")) {
-                        continuaMenuAdmin = false;
-                    }
-                    break;
+         
+        switch (numero) {
+            
+            case 1:
+            System.out.println(site.getListPacotes());             // implementar
+            System.out.println("Voltar para o Menu?digite 1/ Sair digite 0");
+            String escolha1=scanner_1.nextLine();
+            if (!escolha1.equals("1")){
+                continuaMenuAdmin=false;
+            }
+            break;
 
                 case 2:
                     System.out.println("Qual pacote deseja editar");
@@ -231,6 +230,7 @@ public class SiteControllerImpl {
         }
         scanner_1.close();
     }
+    
 
     // Método para atualizar arquivo de pacote
     private static void atualizarArquivoPacotes(SiteTurismo site, List<Pacote> listaPacotes) {
