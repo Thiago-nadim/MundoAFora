@@ -514,21 +514,19 @@ public class LeituraDadosImpl {
         while ((linhaAtual = leitor.readLine()) != null) {
             String[] partes = linhaAtual.split(",");
             if (Integer.parseInt(partes[7].trim()) != idPacote) {
-                System.out.println(partes[7].trim());
                 escritor.write(linhaAtual);
-                escritor.newLine();
+
             } else {
                 int qtdDispPct = Integer.parseInt(partes[1]) - 1;
                 String qtdDispPctStr = Integer.toString(qtdDispPct);
                 escritor.write(partes[0] + "," + qtdDispPctStr + "," + partes[2] + "," + partes[3] + "," + partes[4]
-                + "," + partes[5] + "," + partes[6] + "," + partes[7]);
-                escritor.newLine();
+                + "," + partes[5] + "," + partes[6] + "," + partes[7] + "," + partes[8]);
 
                 List<String> futViagens = usuario.getFutViagens();
                 futViagens.add(partes[0]);
                 usuario.setFutViagens(futViagens);
-
             }
+            escritor.newLine();
         }
 
         } catch (IOException e) {
@@ -548,12 +546,8 @@ public class LeituraDadosImpl {
         }
 
         // Renomear o arquivo temporário para substituir o original
-        if (arquivoEntrada.delete() && arquivoTemporario.renameTo(arquivoEntrada)) {
-            System.out.println("Pacote reservado com sucesso.");
-        } else {
-            System.out.println("Erro ao remover a linha.");
-        }
-        
+        arquivoEntrada.delete();
+        arquivoTemporario.renameTo(arquivoEntrada);
 
     }
 }

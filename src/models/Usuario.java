@@ -23,7 +23,7 @@ public class Usuario extends Pessoa {
         +"Nome:"+this.nome+"\n"
         +"Telefone:"+this.telefone+"\n"
         +"E-mail:"+this.email+"\n"
-        +"Localização"+this.localizacao+"\n";
+        +"Localização:"+this.localizacao+"\n";
     }
 
 

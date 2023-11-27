@@ -101,7 +101,7 @@ public class SiteControllerImpl {
         boolean continuaMenuAdmin = true;
         while (continuaMenuAdmin) {
 
-            System.out.println(" *********** MENU DE ADMIN*********");
+            System.out.println("                         *********** MENU DE ADMIN*********");
             System.out.println(" ");
             System.out.println(" ----------------------Digite 1 para acessar todos pacotes do site ----------------------");
             System.out.println(" ----------------------Digite 2 para editar pacotes   ----------------------");

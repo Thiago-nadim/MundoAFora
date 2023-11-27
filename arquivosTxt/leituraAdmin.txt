@@ -1,5 +1,11 @@
-123456,Mateus Jose,19997361,matheusjose@gmail.com,senha123
-239426,thiago nadim , 1122, nad@gmail.com,senha123
+123.456.789-09, Joao Silva, (11) 5555-5555, joao.silva@email.com, P@ssword123
+234.567.890-12, Maria Oliveira, (21) 6666-6666, maria.oliveira@email.com, SecureP@ss1
+345.678.901-23, Carlos Ferreira, (31) 7777-7777, carlos.ferreira@email.com, Str0ngP@ss!
+456.789.012-34, Ana Oliveira, (41) 8888-8888, ana.oliveira@email.com, P@ssw0rd789
+567.890.123-45, Pedro Ribeiro, (51) 9999-9999, pedro.ribeiro@email.com, SafeP@ssword123
+678.901.234-56, Laura Martins, (61) 3333-3333, laura.martins@email.com, C0mp1exP@ss
+789.012.345-67, Marcos Santos, (71) 4444-4444, marcos.santos@email.com, UniqueP@ss!
+890.123.456-78, Julia Almeida, (81) 5555-5555, julia.almeida@email.com, P@ss4MeNow
+901.234.567-89, Roberto Pereira, (91) 6666-6666, roberto.pereira@email.com, RandomP@ss#
+012.345.678-90, Gabriela Lima, (01) 2222-2222, gabriela.lima@email.com, NewP@ssword456
 2,2,2,2,2
-asdasd123,naruto,40229822,email,senha
-89328392,elonmusk,859595959,elonmusk@yahoo.com.br,senha321
