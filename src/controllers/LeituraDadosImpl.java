@@ -548,12 +548,8 @@ public class LeituraDadosImpl {
         }
 
         // Renomear o arquivo temporário para substituir o original
-        if (arquivoEntrada.delete() && arquivoTemporario.renameTo(arquivoEntrada)) {
-            System.out.println("Pacote reservado com sucesso.");
-        } else {
-            System.out.println("Erro ao remover a linha.");
-        }
-        
+        arquivoEntrada.delete();
+        arquivoTemporario.renameTo(arquivoEntrada);
 
     }
 }

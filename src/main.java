@@ -1,3 +1,4 @@
+import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 import views.SiteViews;
@@ -10,7 +11,7 @@ public class main {
 
     public static void main(String[] args) {
         SiteTurismo site = null;
-        int escolha;
+        int escolha = 0;
         site= LeituraDadosImpl.lerInfoSite();
         LeituraDadosImpl.leituraUsuario(site);
         LeituraDadosImpl.leituraAdmin(site);
@@ -45,11 +46,15 @@ public class main {
             System.out.println("Digite 1 para voltar à tela de login/cadastro.\nDigite 0 para encerrar o programa.");
             // System.out.println("");
 
-            
-            escolha = scanner1.nextInt();
+            try {
+                escolha = scanner1.nextInt();
+            } catch (NoSuchElementException e) {
+                System.err.println("Volte sempre!");
+            }
+
             // scanner1.nextLine();
         } while (escolha != 0);
         // SiteViews.verUsuarios(site);
-        System.out.println("fim do programa!");
+        System.out.println("Fim do programa!");
     }
 }
