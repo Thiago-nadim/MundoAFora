@@ -3,7 +3,7 @@ package models;
 public class Pacote {
 
     public enum CategoriasPct {
-        AVENTURA, CULTURA, RELAXAMENTO,FAMILIA,NATUREZA
+        AVENTURA, CULTURA, RELAXAMENTO, FAMILIA, NATUREZA
     }
 
     private String nomePct;
@@ -19,7 +19,7 @@ public class Pacote {
 
     // Construtor
     public Pacote(String nomePct, boolean disponivel, int qtdDispPct, String destino, String dataIda, String dataVolta,
-            double preco,int qtdMaxPessoas, int idPacote, CategoriasPct categoria) {
+            double preco, int qtdMaxPessoas, int idPacote, CategoriasPct categoria) {
         this.nomePct = nomePct;
         this.qtdDispPct = qtdDispPct;
         this.disponivel = disponivel;
@@ -36,7 +36,7 @@ public class Pacote {
     public String toString() {
 
         return "------------------------------------------------ \n"
-                +"Nome do pacote:" + this.nomePct + "\n" +
+                + "Nome do pacote:" + this.nomePct + "\n" +
                 "Quantidade disponíveis:" + this.qtdDispPct + "\n" +
                 "Destino:" + this.destino + "\n" +
                 "Data de ida:" + this.dataIda + "\n" +
@@ -47,7 +47,7 @@ public class Pacote {
                 "Categoria do pacote:" + this.categoria + "\n";
     }
 
-    // Métodos de acesso 
+    // Métodos de acesso
     public String getNome() {
         return nomePct;
     }

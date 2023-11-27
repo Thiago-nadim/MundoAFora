@@ -11,7 +11,6 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.Iterator;
 
-
 import models.Administrador;
 import models.SiteTurismo;
 import models.Usuario;
@@ -43,29 +42,29 @@ public class SiteControllerImpl {
             System.out.println(" ");
             int numero = scanner_1.nextInt();
             scanner_1.nextLine();
-        
+
             switch (numero) {
 
                 case 1:
                     System.out.println("As futuras viagens progrmadas são as seguintes:");
                     System.out.println(usuario.getFutViagens());
                     System.out.println("Voltar para o Menu?digite 1/ Sair digite 0");
-                    String escolha1=scanner_1.nextLine();
-                    if (!escolha1.equals("1")){
-                        continuaMenuUser=false;
+                    String escolha1 = scanner_1.nextLine();
+                    if (!escolha1.equals("1")) {
+                        continuaMenuUser = false;
                     }
                     break;
-                    
-                    case 2:       
+
+                case 2:
                     System.out.println("O histórico de viagens é o seguinte:");
                     System.out.println(usuario.getHistoricoReservas());
                     System.out.println("Voltar para o Menu?digite 1/ Sair digite 0");
-                    String escolha2=scanner_1.nextLine();
-                    if (!escolha2.equals("1")){
-                        continuaMenuUser=false;
+                    String escolha2 = scanner_1.nextLine();
+                    if (!escolha2.equals("1")) {
+                        continuaMenuUser = false;
                     }
 
-                break;
+                    break;
 
                 case 3:
                     System.out.println("Acessando pacotes disponíveis");
@@ -77,19 +76,19 @@ public class SiteControllerImpl {
                     numero = scanner_1.nextInt();
                     switch (numero) {
                         case 0:
-                            continuaMenuUser=false;
+                            continuaMenuUser = false;
                         case 1:
 
                         case 2:
-                        System.out.println("Digite o id do pacote desejado: ");
-                        int id = scanner_1.nextInt();
-                        System.out.println("Qual é a data que está fazendo essa reserva? ");
-                        String dataReserva = scanner_1.next();
-                        System.out.println("Para quantas pessoas é a reserva? ");
-                        int qtdePessoas = scanner_1.nextInt();
-                        AdministradorController.realizarReserva(site, usuario, id, dataReserva, qtdePessoas);
+                            System.out.println("Digite o id do pacote desejado: ");
+                            int id = scanner_1.nextInt();
+                            System.out.println("Qual é a data que está fazendo essa reserva? ");
+                            String dataReserva = scanner_1.next();
+                            System.out.println("Para quantas pessoas é a reserva? ");
+                            int qtdePessoas = scanner_1.nextInt();
+                            AdministradorController.realizarReserva(site, usuario, id, dataReserva, qtdePessoas);
                     }
-                break;
+                    break;
             }
         }
         scanner_1.close();
@@ -102,7 +101,8 @@ public class SiteControllerImpl {
 
             System.out.println("                         *********** MENU DE ADMIN*********");
             System.out.println(" ");
-            System.out.println(" ----------------------Digite 1 para acessar todos pacotes do site ----------------------");
+            System.out.println(
+                    " ----------------------Digite 1 para acessar todos pacotes do site ----------------------");
             System.out.println(" ----------------------Digite 2 para editar pacotes   ----------------------");
             System.out.println(" ----------------------digite 3 para criar pacotes----------------------");
             System.out.println(" ----------------------Digite 4 para remover pacotes ----------------------");
@@ -114,91 +114,88 @@ public class SiteControllerImpl {
 
             int numero = scanner_1.nextInt();
             scanner_1.nextLine();
-            
-                
-            switch (numero) {
-                
-                case 1:
-                System.out.println(site.getListPacotes());             
-                System.out.println("Voltar para o Menu?digite 1/ Sair digite 0");
-                String escolha1=scanner_1.nextLine();
-                if (!escolha1.equals("1")){
-                    continuaMenuAdmin=false;
-                }
-                break;
 
-                case 2:   
-                AdministradorController.EditarPacotes(site, scanner_1);
-                System.out.println("Voltar para o Menu?digite 1/ Sair digite 0");
-                String escolha2=scanner_1.nextLine();
-                if (!escolha2.equals("1")){
-                    continuaMenuAdmin=false;
-                }
-                break;
+            switch (numero) {
+
+                case 1:
+                    System.out.println(site.getListPacotes());
+                    System.out.println("Voltar para o Menu?digite 1/ Sair digite 0");
+                    String escolha1 = scanner_1.nextLine();
+                    if (!escolha1.equals("1")) {
+                        continuaMenuAdmin = false;
+                    }
+                    break;
+
+                case 2:
+                    AdministradorController.EditarPacotes(site, scanner_1);
+                    System.out.println("Voltar para o Menu?digite 1/ Sair digite 0");
+                    String escolha2 = scanner_1.nextLine();
+                    if (!escolha2.equals("1")) {
+                        continuaMenuAdmin = false;
+                    }
+                    break;
 
                 case 3:
-                AdministradorController.criarPacote(site, scanner_1);
-                System.out.println("Voltar para o Menu?digite 1/ Sair digite 0");
-                String escolha3=scanner_1.nextLine();
-                if (!escolha3.equals("1")){
-                    continuaMenuAdmin=false;
-                }
-                break;
+                    AdministradorController.criarPacote(site, scanner_1);
+                    System.out.println("Voltar para o Menu?digite 1/ Sair digite 0");
+                    String escolha3 = scanner_1.nextLine();
+                    if (!escolha3.equals("1")) {
+                        continuaMenuAdmin = false;
+                    }
+                    break;
 
                 case 4:
-                Scanner scanner = new Scanner(System.in);
+                    Scanner scanner = new Scanner(System.in);
 
-                System.out.println("Digite o ID do pacote que deseja excluir:");
-                int idPacoteParaExcluir = scanner.nextInt();
-                scanner.nextLine();
+                    System.out.println("Digite o ID do pacote que deseja excluir:");
+                    int idPacoteParaExcluir = scanner.nextInt();
+                    scanner.nextLine();
 
-                boolean pacoteEncontrado = false;
+                    boolean pacoteEncontrado = false;
 
-                // Criando copia da lista de pacotes
-                List<Pacote> listaPacotes = new ArrayList<>(site.getListPacotes());
+                    // Criando copia da lista de pacotes
+                    List<Pacote> listaPacotes = new ArrayList<>(site.getListPacotes());
 
-                for(Pacote pacoteLista : listaPacotes) {
-                    if (pacoteLista.getIdPacote() == idPacoteParaExcluir) {
-                        pacoteEncontrado = true;
-                        listaPacotes.remove(pacoteLista);
+                    for (Pacote pacoteLista : listaPacotes) {
+                        if (pacoteLista.getIdPacote() == idPacoteParaExcluir) {
+                            pacoteEncontrado = true;
+                            listaPacotes.remove(pacoteLista);
 
-                        // Atualiza o arquivo PacotesDisponiveis.txt
-                        atualizarArquivoPacotes(site, listaPacotes);
+                            // Atualiza o arquivo PacotesDisponiveis.txt
+                            atualizarArquivoPacotes(site, listaPacotes);
 
-                        System.out.println("Pacote removido com sucesso!");
-                        break;
+                            System.out.println("Pacote removido com sucesso!");
+                            break;
+                        }
                     }
-                }
 
-                if (!pacoteEncontrado){
-                    System.out.println("Pacote não encontrado.");
-                }
+                    if (!pacoteEncontrado) {
+                        System.out.println("Pacote não encontrado.");
+                    }
 
-                System.out.println("Voltar para o Menu?digite 1/ Sair digite 0");
-                String escolha4=scanner_1.nextLine();
-                if (!escolha4.equals("1")){
-                    continuaMenuAdmin = false;
-                }
-                break;
+                    System.out.println("Voltar para o Menu?digite 1/ Sair digite 0");
+                    String escolha4 = scanner_1.nextLine();
+                    if (!escolha4.equals("1")) {
+                        continuaMenuAdmin = false;
+                    }
+                    break;
 
                 case 5:
-                AdministradorController.CadastrarAdmin(site, scanner_1);
+                    AdministradorController.CadastrarAdmin(site, scanner_1);
 
-                //lógica de cadastro de admins
-                System.out.println("Voltar para o Menu?digite 1/ Sair digite 0");
-                String escolha5=scanner_1.nextLine();
-                if (!escolha5.equals("1")){
-                    continuaMenuAdmin=false;
-                }
-                break;
+                    // lógica de cadastro de admins
+                    System.out.println("Voltar para o Menu?digite 1/ Sair digite 0");
+                    String escolha5 = scanner_1.nextLine();
+                    if (!escolha5.equals("1")) {
+                        continuaMenuAdmin = false;
+                    }
+                    break;
 
-                
-                }
+            }
 
         }
         scanner_1.close();
     }
-    
 
     // Método para atualizar arquivo de pacote
     private static void atualizarArquivoPacotes(SiteTurismo site, List<Pacote> listaPacotes) {

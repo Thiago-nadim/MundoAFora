@@ -12,7 +12,7 @@ public class main {
     public static void main(String[] args) {
         SiteTurismo site = null;
         int escolha = 0;
-        site= LeituraDadosImpl.lerInfoSite();
+        site = LeituraDadosImpl.lerInfoSite();
         LeituraDadosImpl.leituraUsuario(site);
         LeituraDadosImpl.leituraAdmin(site);
         LeituraDadosImpl.LeituraPacotes(site);
@@ -42,7 +42,7 @@ public class main {
                 default:
                     System.out.println("Entrada inválida!O que deseja fazer?");
             }
-            // 
+            //
             System.out.println("Digite 1 para voltar à tela de login/cadastro.\nDigite 0 para encerrar o programa.");
             // System.out.println("");
 

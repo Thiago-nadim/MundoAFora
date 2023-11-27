@@ -9,33 +9,32 @@ import java.util.Scanner;
 import models.Pacote;
 
 public class SistemaPacotesViagem {
-      private ArrayList<Pacote> pacotes;
-      private Scanner scanner;
+    private ArrayList<Pacote> pacotes;
+    private Scanner scanner;
 
-      // Construtor
-      public SistemaPacotesViagem() {
-          pacotes = new ArrayList<>();
-          scanner = new Scanner(System.in);
-      }
+    // Construtor
+    public SistemaPacotesViagem() {
+        pacotes = new ArrayList<>();
+        scanner = new Scanner(System.in);
+    }
 
-      // Adiciona um pacote de viagem
-      public void criarPacote() {
+    // Adiciona um pacote de viagem
+    public void criarPacote() {
 
-      }
+    }
 
-      // Exclui um pacote de viagem
-      public void excluirPacote() {
+    // Exclui um pacote de viagem
+    public void excluirPacote() {
 
-      }
+    }
 
-      // Edita um pacote de viagem
-      public void editarPacote() {
+    // Edita um pacote de viagem
+    public void editarPacote() {
 
-      }
+    }
 
-      // Exibindo todos os pacotes disponíveis
-      public void exibirPacotes() {
+    // Exibindo todos os pacotes disponíveis
+    public void exibirPacotes() {
 
-      }
-  }
-
+    }
+}
