@@ -47,7 +47,7 @@ public class Pacote {
                 "Categoria do pacote:" + this.categoria + "\n";
     }
 
-    // Métodos de acesso (getters e setters)
+    // Métodos de acesso 
     public String getNome() {
         return nomePct;
     }

@@ -18,20 +18,11 @@ import models.Pacote.CategoriasPct;
 import models.SiteTurismo;
 import models.Usuario;
 
-
-    // uma função para abrir o TXT
-    // uma função pra mandar pro TXT
-    // uma função para leitura para cadastro
-    // uma função para leitura do login
-
 public class LeituraDadosImpl {
-
-    // o construtor do site
-
 
     public static SiteTurismo lerInfoSite() {
 
-    // Especifique o caminho do arquivo que você deseja ler
+    // Especifiqua o caminho do arquivo que você deseja ler
         SiteTurismo site = null;
         String caminhoArquivo = "arquivosTxt/testeTxt.txt";
 
@@ -66,7 +57,6 @@ public class LeituraDadosImpl {
         }
     return site;
 
-        // fazer a mesma coisa mas nao só apenas ler o construtor do site mas  também inicializar alguns usuarios, pacotes e adm
     }
 
 
@@ -133,14 +123,14 @@ public class LeituraDadosImpl {
                     if (partes.length >= 4) { //                                 
                         pacote = new Pacote(partes[0].trim(),           
                         true,                      
-                        Integer.parseInt(partes[1].trim()),  // int
-                        partes[2].trim(),  // int
-                        partes[3].trim(),           // String
-                        partes[4].trim(),           // String
-                        Double.parseDouble(partes[5].trim()),         // String
-                        Integer.parseInt(partes[6].trim()),          // String
-                        Integer.parseInt(partes[7].trim()),          // String
-                        CategoriasPct.valueOf(partes[8].trim())   // Enum (substitua SeuEnum pelo nome da sua enumeração)
+                        Integer.parseInt(partes[1].trim()),  
+                        partes[2].trim(),  
+                        partes[3].trim(),           
+                        partes[4].trim(),           
+                        Double.parseDouble(partes[5].trim()),         
+                        Integer.parseInt(partes[6].trim()),          
+                        Integer.parseInt(partes[7].trim()),          
+                        CategoriasPct.valueOf(partes[8].trim()) 
                         
                         );
                        
@@ -201,7 +191,7 @@ public class LeituraDadosImpl {
     }
 
 
-    // checa se o email e senha declarados batem com algum dos dois maps (usuario e admin)
+    // Checa se o email e senha declarados batem com algum dos dois maps (usuario e admin)
     public static void dadosLogin(SiteTurismo site){
         Scanner scanner1 = new Scanner(System.in);
         Scanner scanner2 = new Scanner(System.in);
@@ -213,7 +203,7 @@ public class LeituraDadosImpl {
         System.out.print("Informe a senha ");
         String senha  = scanner2.nextLine();
 
-        //checa usuario
+        // Checa usuario
         if (site.getMap().containsKey(email)) {
             System.out.println("O email '" + email + "' está presente no sistema.");
             // System.out.println(" teste " + site.getMap().get(email).getSenha());
@@ -244,7 +234,7 @@ public class LeituraDadosImpl {
                 return;
             }
                 
-        //checa admin
+        // Checa admin
         if(site.getMap2().containsKey(email)){
             System.out.println("O email '" + email + "' está presente no sistema.");
             // System.out.println(" teste " + site.getMap2().get(email).getSenha());
@@ -286,9 +276,10 @@ public class LeituraDadosImpl {
 
 
     
-    // vai cadastrar um usuário
+    // Vai cadastrar um usuário
     public static void cadastroDados(SiteTurismo site ){
-        // cadastrar manualmente
+
+        // Cadastra manualmente
         Map<String, Usuario> mapTemporario = site.getMap();
         Scanner scanner1 = new Scanner(System.in);
 
@@ -327,9 +318,9 @@ public class LeituraDadosImpl {
 
     }
 
-    // vai cadastrar um admin
+    // Cadastra um admin
     public static void cadastroDadosAdmin(SiteTurismo site ){
-        // cadastrar manualmente
+        // Cadastra manualmente
         Map<String, Administrador> mapTemporario2 = site.getMap2();
         Scanner scanner1 = new Scanner(System.in);
 
@@ -421,9 +412,9 @@ public class LeituraDadosImpl {
         System.out.println("O id do pacote criado é: " + idPacote);
 
         Pacote pacote = new Pacote(nomePct, dispBoolean, Integer.parseInt(qtdDispPct), destino,
-        dataIda, dataVolta, Double.parseDouble(preco), Integer.parseInt(qtdMaxPessoas), idPacote, categoria); // cria objeto
+        dataIda, dataVolta, Double.parseDouble(preco), Integer.parseInt(qtdMaxPessoas), idPacote, categoria); // Cria objeto
 
-        site.addListPacotes(site, pacote); // adiciona na lista de pacotes em SiteTurismo
+        site.addListPacotes(site, pacote); // Adiciona na lista de pacotes em SiteTurismo
 
         // Coloca no Banco de dados
         File arquivo = new File( "arquivosTxt/PacotesDisponiveis.txt" );
@@ -485,7 +476,7 @@ public class LeituraDadosImpl {
             System.out.println("Senha");
             String senha = scanner_1.nextLine();
 
-                    //Escrever no txt
+            //Escreve no txt
             File arquivo1 = new File( "arquivosTxt/leituraAdmin.txt" );
             try {
             FileWriter fw = new FileWriter( arquivo1, true );
@@ -510,7 +501,7 @@ public class LeituraDadosImpl {
 
         String linhaAtual;
 
-        //arruma banco de dados
+        // Arruma banco de dados
         while ((linhaAtual = leitor.readLine()) != null) {
             String[] partes = linhaAtual.split(",");
             if (Integer.parseInt(partes[7].trim()) != idPacote) {
@@ -532,7 +523,7 @@ public class LeituraDadosImpl {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        //arruma lista de pacotes site
+        // Arruma lista de pacotes site
         List<Pacote> lPacotes = site.getListPacotes();
         for(Pacote unicoPacote : lPacotes) {
             int id = unicoPacote.getIdPacote();

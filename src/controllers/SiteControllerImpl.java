@@ -17,7 +17,6 @@ import models.SiteTurismo;
 import models.Usuario;
 import models.Pacote;
 
-// vai fazer aq logica de compras, reservas, e login
 public class SiteControllerImpl {
 
     public static void login(SiteTurismo site) {
@@ -120,7 +119,7 @@ public class SiteControllerImpl {
             switch (numero) {
                 
                 case 1:
-                System.out.println(site.getListPacotes());             // implementar
+                System.out.println(site.getListPacotes());             
                 System.out.println("Voltar para o Menu?digite 1/ Sair digite 0");
                 String escolha1=scanner_1.nextLine();
                 if (!escolha1.equals("1")){
@@ -163,7 +162,7 @@ public class SiteControllerImpl {
                         pacoteEncontrado = true;
                         listaPacotes.remove(pacoteLista);
 
-                        // Atualizar o arquivo PacotesDisponiveis.txt
+                        // Atualiza o arquivo PacotesDisponiveis.txt
                         atualizarArquivoPacotes(site, listaPacotes);
 
                         System.out.println("Pacote removido com sucesso!");

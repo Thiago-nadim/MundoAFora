@@ -1,4 +1,4 @@
-// vai guardar as collecions , dados do site 
+// Guardando as collecions, dados do site 
 
 package models;
 
@@ -8,11 +8,11 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class SiteTurismo {
-    Map<String, Usuario> MapLogin = new HashMap<>();  // login dos usuarios 
-    Map<String, Administrador> MapLogin2 = new HashMap<>();  // login dos admins 
-    List<Pacote> ListPacotes = new ArrayList<>();  //lista de tds pacotes do site
+    Map<String, Usuario> MapLogin = new HashMap<>();  // Login dos usuarios 
+    Map<String, Administrador> MapLogin2 = new HashMap<>();  // Login dos admins 
+    List<Pacote> ListPacotes = new ArrayList<>();  // Lista de todos os pacotes do site
     
-    List<Reserva> ListReservas = new ArrayList<>(); // lista com todas reservas
+    List<Reserva> ListReservas = new ArrayList<>(); // Lista com todas as reservas
     private String nomeEmpresa;
     private String cnpj;
     private String telefone;

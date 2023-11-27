@@ -1,5 +1,5 @@
 
-//essa classe vai ser usada pelos admin para fazer o crud dos pacotes
+// Essa classe vai ser usada pelos admin para fazer o crud dos pacotes
 
 package controllers;
 
@@ -18,17 +18,17 @@ public class SistemaPacotesViagem {
           scanner = new Scanner(System.in);
       }
 
-      // Adicionar um pacote de viagem
+      // Adiciona um pacote de viagem
       public void criarPacote() {
 
       }
 
-      // Excluir um pacote de viagem
+      // Exclui um pacote de viagem
       public void excluirPacote() {
 
       }
 
-      // Editar um pacote de viagem
+      // Edita um pacote de viagem
       public void editarPacote() {
 
       }
