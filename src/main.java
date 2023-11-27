@@ -14,6 +14,9 @@ public class main {
         site= LeituraDadosImpl.lerInfoSite();
         LeituraDadosImpl.leituraUsuario(site);
         LeituraDadosImpl.leituraAdmin(site);
+        LeituraDadosImpl.LeituraPacotes(site);
+        // System.out.println("Olaaaa");
+        // System.out.println(site.getListPacotes());
         Scanner scanner1 = new Scanner(System.in);
 
         do {

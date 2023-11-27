@@ -1,6 +1,10 @@
-Viagem Disney,3,Orlando,30/10/2023,05/11/2023,500,6,12345,turismo
-Rota da Uva de Jundiai,7,Parque da Uva,30/01/2024,05/02/2024,50,10,12346,aventura
-Rota Unicamp,3,Campinas,20/01/2024,22/01/2025,50,4,829
-Nordeste,2,Recife,25/11/2024,25/12/2024,400,5,127,Verao
+Viagem Disney,3,Orlando,30/10/2023,05/11/2023,500,6,12345,FAMILIA
+Rota da Uva de Jundiai,7,Parque da Uva,30/01/2024,05/02/2024,50,10,12346,AVENTURA
+Rota Unicamp,3,Campinas,20/01/2024,22/01/2025,50,4,829,CULTURA
+Nordeste,2,Recife,25/11/2024,25/12/2024,400,5,127,NATUREZA
 Copa do Mundo,0,Estados Unidos,10/06/2026,10/07/2026,5000,4,934,AVENTURA
+<<<<<<< HEAD
 Seattle,3,Washington,30/10/2025,05/11/2025,2000,3,948
+=======
+Seattle,2,Washington,30/10/2025,05/11/2025,2000,3,948, FAMILIA
+>>>>>>> 0ac6c1275f32754a5da687c340bee44becb5d412

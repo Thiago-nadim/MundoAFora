@@ -108,7 +108,58 @@ public class LeituraDadosImpl {
         }
     }
 
+    public static void LeituraPacotes(SiteTurismo site){
+        Pacote pacote= null;
+        String caminhoArquivo ="arquivosTxt/PacotesDisponiveis.txt";
+        List<Pacote> ListTemporaria= site.getListPacotes();
 
+        File arquivo = new File(caminhoArquivo);
+        
+
+        try {
+                // Cria um FileReader para ler o arquivo
+                FileReader leitor = new FileReader(arquivo);
+
+                // Cria um BufferedReader para leitura eficiente
+                BufferedReader bufferedReader = new BufferedReader(leitor);
+
+                String linha;
+
+                // Lê cada linha do arquivo até o final
+                while ((linha = bufferedReader.readLine()) != null) {
+                    String[] partes = linha.split(",");
+                
+                    if (partes.length >= 4) { //                                 
+                        pacote = new Pacote(partes[0].trim(),           
+                        true,                      
+                        Integer.parseInt(partes[1].trim()),  // int
+                        partes[2].trim(),  // int
+                        partes[3].trim(),           // String
+                        partes[4].trim(),           // String
+                        Double.parseDouble(partes[5].trim()),           // String
+                        Integer.parseInt(partes[6].trim()),          // String
+                        Integer.parseInt(partes[7].trim()),          // String
+                        CategoriasPct.valueOf(partes[8].trim())   // Enum (substitua SeuEnum pelo nome da sua enumeração)
+                        
+                        );
+                       
+                        System.out.println(linha);
+                        
+                        ListTemporaria.add(pacote);
+                        site.setListPacotes(ListTemporaria);
+                        
+                    } else {
+                        System.out.println("Linha inválida: " + linha);
+                    }
+                }                
+                
+                // Fecha o BufferedReader
+                bufferedReader.close();
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
 
     public static void leituraAdmin(SiteTurismo site){
         Administrador admin = null;
@@ -240,12 +291,35 @@ public class LeituraDadosImpl {
         Map<String, Usuario> mapTemporario = site.getMap();
         Scanner scanner1 = new Scanner(System.in);
 
-        System.out.print("ATENÇÃO, informe o seu: cpf, nome, telefone, email, senha e localizacao. SEPARADOS POR VIRGULA e SEM ESPAÇO\n");
-        String linha  = scanner1.nextLine();
-        String[] partes = linha.split(",");
-        Usuario usuario = new Usuario(false, partes[0].trim(), partes[1].trim(), partes[2].trim(), partes[3].trim(), partes[4].trim(), partes[5].trim());
+        System.out.println("Digite os seus dados \nCPF:");
+        String cpf = scanner1.nextLine();
+        System.out.println("Nome:");
+        String nome = scanner1.nextLine();
+        System.out.println("Telefone:");
+        String telefone  = scanner1.nextLine();
+        System.out.println("E-mail:");
+        String email  = scanner1.nextLine();
+        System.out.println("Senha:");
+        String senha  = scanner1.nextLine();
+        System.out.println("Localização:");
+        String localizacao  = scanner1.nextLine();
+        Usuario usuario = new Usuario(false, cpf, nome, telefone, email, senha, localizacao);
         mapTemporario.put(usuario.getEmail(), usuario);
         site.setMap(mapTemporario);
+
+        File arquivo1 = new File( "arquivosTxt/leituraUsuario.txt" );
+        try {
+            FileWriter fw = new FileWriter( arquivo1, true );
+            BufferedWriter bw = new BufferedWriter( fw );
+            bw.newLine();
+            bw.write(cpf + "," + nome + "," + telefone + "," + email + "," + senha + "," + localizacao);
+
+            bw.close();
+            fw.close();
+            } catch (IOException e) {
+                    e.printStackTrace();
+            }
+
         
         System.out.println("Email cadastrado: " +  usuario.getEmail());
         System.out.println("Senha cadastrada: " + usuario.getSenha());
@@ -364,6 +438,35 @@ public class LeituraDadosImpl {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public static void CadastrarAdmin (SiteTurismo site, Scanner scanner_1) {
+            System.out.println("Digite os dados do novo Administrador");
+            System.out.println("CPF");
+            String cpf = scanner_1.nextLine();
+            System.out.println("Nome");
+            String nome = scanner_1.nextLine();
+            System.out.println("Telefone");
+            String telefone = scanner_1.nextLine();
+            System.out.println("E-mail");
+            String email = scanner_1.nextLine();
+            System.out.println("Senha");
+            String senha = scanner_1.nextLine();
+
+                    //Escrever no txt
+            File arquivo1 = new File( "arquivosTxt/leituraAdmin.txt" );
+            try {
+            FileWriter fw = new FileWriter( arquivo1, true );
+            BufferedWriter bw = new BufferedWriter( fw );
+            bw.newLine();
+            bw.write(cpf + "," + nome + "," + telefone + "," + email + "," + senha);
+
+            bw.close();
+            fw.close();
+            } catch (IOException e) {
+                    e.printStackTrace();
+            }
+                    
     }
 
     public static void fazerReserva(SiteTurismo site, Usuario usuario, int idPacote, String dataReserva, int qtdPessoas) {
