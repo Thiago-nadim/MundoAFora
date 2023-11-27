@@ -2,7 +2,7 @@ package models;
 
 public class Pacote {
 
-    private enum CategoriasPct {
+    public enum CategoriasPct {
         AVENTURA, CULTURA, RELAXAMENTO
     }
 
