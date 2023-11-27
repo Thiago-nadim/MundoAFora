@@ -111,7 +111,58 @@ public class LeituraDadosImpl {
         }
     }
 
+    public static void LeituraPacotes(SiteTurismo site){
+        Pacote pacote= null;
+        String caminhoArquivo ="arquivosTxt/PacotesDisponiveis.txt";
+        List<Pacote> ListTemporaria= site.getListPacotes();
 
+        File arquivo = new File(caminhoArquivo);
+        
+
+        try {
+                // Cria um FileReader para ler o arquivo
+                FileReader leitor = new FileReader(arquivo);
+
+                // Cria um BufferedReader para leitura eficiente
+                BufferedReader bufferedReader = new BufferedReader(leitor);
+
+                String linha;
+
+                // Lê cada linha do arquivo até o final
+                while ((linha = bufferedReader.readLine()) != null) {
+                    String[] partes = linha.split(",");
+                
+                    if (partes.length >= 4) { //                                 
+                        pacote = new Pacote(partes[0].trim(),           
+                        true,                      
+                        Integer.parseInt(partes[1].trim()),  // int
+                        partes[2].trim(),  // int
+                        partes[3].trim(),           // String
+                        partes[4].trim(),           // String
+                        Double.parseDouble(partes[5].trim()),           // String
+                        Integer.parseInt(partes[6].trim()),          // String
+                        Integer.parseInt(partes[7].trim()),          // String
+                        CategoriasPct.valueOf(partes[8].trim())   // Enum (substitua SeuEnum pelo nome da sua enumeração)
+                        
+                        );
+                       
+                        System.out.println(linha);
+                        
+                        ListTemporaria.add(pacote);
+                        site.setListPacotes(ListTemporaria);
+                        
+                    } else {
+                        System.out.println("Linha inválida: " + linha);
+                    }
+                }                
+                
+                // Fecha o BufferedReader
+                bufferedReader.close();
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
 
     public static void leituraAdmin(SiteTurismo site){
         Administrador admin = null;

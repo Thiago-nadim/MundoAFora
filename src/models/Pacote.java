@@ -3,7 +3,7 @@ package models;
 public class Pacote {
 
     public enum CategoriasPct {
-        AVENTURA, CULTURA, RELAXAMENTO
+        AVENTURA, CULTURA, RELAXAMENTO,FAMILIA,NATUREZA
     }
 
     private String nomePct;
