@@ -178,10 +178,6 @@ public class SiteControllerImpl {
                     System.out.println("Pacote não encontrado.");
                 }
 
-                // Atualizar pacote 
-
-                scanner.close();
-
                 System.out.println("Voltar para o Menu?digite 1/ Sair digite 0");
                 String escolha4=scanner_1.nextLine();
                 if (!escolha4.equals("1")){
