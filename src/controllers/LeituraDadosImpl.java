@@ -77,6 +77,7 @@ public class LeituraDadosImpl {
 
             // Lê cada linha do arquivo até o final
             while ((linha = bufferedReader.readLine()) != null) {
+
                 String[] partes = linha.split(",");
 
                 if (partes.length >= 4) {
@@ -345,6 +346,8 @@ public class LeituraDadosImpl {
 
             // Lê cada linha do arquivo até o final
             while ((linha = bufferedReader.readLine()) != null) {
+                if (linha == "")
+                    continue;
                 String[] partes = linha.split(",");
 
                 if (partes.length >= 7) {
@@ -357,8 +360,6 @@ public class LeituraDadosImpl {
                     System.out.println("Quantidade máxima de pessoas: " + partes[6].trim());
                     System.out.println("Id do Pacote: " + partes[7].trim());
                     System.out.println();
-                } else {
-                    System.out.println("Linha inválida: " + linha);
                 }
             }
 
