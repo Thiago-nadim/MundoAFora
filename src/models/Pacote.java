@@ -35,15 +35,16 @@ public class Pacote {
     @Override
     public String toString() {
 
-        return "Nome do pacote:" + this.nomePct + "\n" +
-                "Quantidade disponíveis" + this.qtdDispPct + "\n" +
-                "Destino" + this.destino + "\n" +
-                "Data de ida" + this.dataIda + "\n" +
-                "Data de volta" + this.dataVolta + "\n" +
+        return "------------------------------------------------ \n"
+                +"Nome do pacote:" + this.nomePct + "\n" +
+                "Quantidade disponíveis:" + this.qtdDispPct + "\n" +
+                "Destino:" + this.destino + "\n" +
+                "Data de ida:" + this.dataIda + "\n" +
+                "Data de volta:" + this.dataVolta + "\n" +
                 "Preço:" + this.preco + "\n" +
-                "Quantidade máxima de pessoas" + this.qtdMaxPessoas + "\n" +
-                "Id do pacote" + this.idPacote + "\n" +
-                "Categoria do pacote" + this.categoria + "\n";
+                "Quantidade máxima de pessoas:" + this.qtdMaxPessoas + "\n" +
+                "Id do pacote:" + this.idPacote + "\n" +
+                "Categoria do pacote:" + this.categoria + "\n";
     }
 
     // Métodos de acesso (getters e setters)

@@ -6,6 +6,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
@@ -136,20 +137,20 @@ public class LeituraDadosImpl {
                         partes[2].trim(),  // int
                         partes[3].trim(),           // String
                         partes[4].trim(),           // String
-                        Double.parseDouble(partes[5].trim()),           // String
+                        Double.parseDouble(partes[5].trim()),         // String
                         Integer.parseInt(partes[6].trim()),          // String
                         Integer.parseInt(partes[7].trim()),          // String
                         CategoriasPct.valueOf(partes[8].trim())   // Enum (substitua SeuEnum pelo nome da sua enumeração)
                         
                         );
                        
-                        System.out.println(linha);
+                        // System.out.println(linha);
                         
                         ListTemporaria.add(pacote);
                         site.setListPacotes(ListTemporaria);
                         
                     } else {
-                        System.out.println("Linha inválida: " + linha);
+                        // System.out.println("Linha inválida: " + linha);
                     }
                 }                
                 
@@ -439,6 +440,37 @@ public class LeituraDadosImpl {
             e.printStackTrace();
         }
     }
+
+    public static void EditarPacotes (SiteTurismo site, Scanner scanner_1) {
+        List<String> linhas = new ArrayList<>();
+        System.out.println("Digite o nome do Pacote a ser editado:");
+        String AntigoPct = scanner_1.nextLine();
+        System.out.println("Digite como será o pacote editado:");
+        String NovoPct = scanner_1.nextLine();
+
+        try (BufferedReader br = new BufferedReader(new FileReader("arquivosTxt/PacotesDisponiveis.txt"))) {
+            String linha;
+            while ((linha = br.readLine()) != null) {
+                if (linha.startsWith(AntigoPct)) {
+                    linhas.add(NovoPct);
+                } else {
+                    linhas.add(linha);
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter("arquivosTxt/PacotesDisponiveis.txt"))) {
+            for (String linha : linhas) {
+                bw.write(linha + "\n");
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 
     public static void CadastrarAdmin (SiteTurismo site, Scanner scanner_1) {
             System.out.println("Digite os dados do novo Administrador");

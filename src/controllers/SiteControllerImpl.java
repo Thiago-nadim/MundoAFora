@@ -129,10 +129,7 @@ public class SiteControllerImpl {
                 break;
 
                 case 2:   
-                List<String> linhas = new ArrayList<>();     
-                System.out.println("Qual pacote deseja editar?");
-                String nomePct = scanner_1.nextLine();
-                //logica de edição de pacotes
+                AdministradorController.EditarPacotes(site, scanner_1);
                 System.out.println("Voltar para o Menu?digite 1/ Sair digite 0");
                 String escolha2=scanner_1.nextLine();
                 if (!escolha2.equals("1")){
