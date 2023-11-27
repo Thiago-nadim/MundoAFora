@@ -21,8 +21,12 @@ public class AdministradorController {
         LeituraDadosImpl.criarPacoteNovo(site, scanner_1);
     }
 
-        public static void realizarReserva(SiteTurismo site, Usuario usuario, int idPacote, String dataReserva, int qtdePessoas){
+    public static void realizarReserva(SiteTurismo site, Usuario usuario, int idPacote, String dataReserva, int qtdePessoas){
         LeituraDadosImpl.fazerReserva(site, usuario, idPacote, dataReserva, qtdePessoas);
+    }
+
+    public static void CadastrarAdmin(SiteTurismo site, Scanner scanner_1) {
+        LeituraDadosImpl.CadastrarAdmin(site, scanner_1);
     }
     
 }

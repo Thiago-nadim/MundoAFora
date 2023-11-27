@@ -6,7 +6,6 @@ import controllers.LeituraDadosImpl;
 import controllers.SiteControllerImpl;
 import models.SiteTurismo;
 
-
 public class main {
 
     public static void main(String[] args) {
@@ -20,10 +19,10 @@ public class main {
         // System.out.println(site.getListPacotes());
         Scanner scanner1 = new Scanner(System.in);
 
-
         do {
-            System.out.println(" ********************* Bem Vindo ao site " + site.getNomeEmpresa() + "! ******************");
-                        System.out.println(" ----------------------Para fazer o Login digite 1 ----------------------");
+            System.out.println(
+                    " ********************* Bem Vindo ao site " + site.getNomeEmpresa() + "! ******************");
+            System.out.println(" ----------------------Para fazer o Login digite 1 ----------------------");
             System.out.println(" ----------------------Para cadastro digite 2       ----------------------");
             System.out.println(" ");
 
