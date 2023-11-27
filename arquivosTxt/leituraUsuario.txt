@@ -1,4 +1,11 @@
-123456,Mateus Jose,19997361,matheusjose@gmail.com,senha123,sao_paulo
-654123,Damner Augusto,65993324413,damneraugts@gmail.com,senha321,Rj
+098.765.432-10, Lucas Souza, (12) 7777-7777, lucas.souza@email.com, Password@321, São Paulo
+210.987.654-32, Carolina Lima, (24) 8888-8888, carolina.lima@email.com, SecureP@ssword1, Rio de Janeiro
+323.456.789-54, Ricardo Santos, (34) 9999-9999, ricardo.santos@email.com, Str0ngP@ss!, Belo Horizonte
+432.109.876-76, Juliana Oliveira, (45) 1111-1111, juliana.oliveira@email.com, P@ssword789, Salvador
+545.678.901-98, Gabriel Silva, (56) 2222-2222, gabriel.silva@email.com, SafeP@ssword123, Brasília
+656.789.012-20, Renata Pereira, (67) 3333-3333, renata.pereira@email.com, C0mp1exP@ss, Recife
+767.890.123-42, Marcos Oliveira, (78) 4444-4444, marcos.oliveira@email.com, UniqueP@ss!, Porto Alegre
+879.012.345-64, Camila Almeida, (89) 5555-5555, camila.almeida@email.com, P@ss4MeNow, Fortaleza
+980.123.456-86, Rafael Martins, (90) 6666-6666, rafael.martins@email.com, RandomP@ss#, Manaus
+012.345.678-09, Isabela Ribeiro, (01) 2222-2222, isabela.ribeiro@email.com, NewP@ssword456, Belém
 1,1,1,1,1,1
-1239012390,hugo,1923021903,12312390,12321390,123901239
