@@ -150,7 +150,7 @@ public class LeituraDadosImpl {
                         site.setListPacotes(ListTemporaria);
                         
                     } else {
-                        // System.out.println("Linha inválida: " + linha);
+                        System.out.println("Linha inválida: " + linha);
                     }
                 }                
                 
