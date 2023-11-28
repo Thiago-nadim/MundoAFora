@@ -24,5 +24,3 @@ Tóquio Moderna, 9, Tóquio, 04/04/2026, 12/04/2026, 3500, 2, 101, CULTURA
 Ilha Grande em Família, 14, Ilha Grande, 20/06/2026, 28/06/2026, 3200, 4, 202, FAMILIA
 Barcelona Gastronômica, 5, Barcelona, 09/08/2026, 17/08/2026, 2900, 2, 303, CULTURA
 Safári na África, 11, Nairobi, 26/10/2026, 02/11/2026, 5000, 3, 404, AVENTURA
-
-
