@@ -13,7 +13,7 @@ import models.Pacote;
 
 public class SiteViews {
 
-    public static void verUsuarios( SiteTurismo site){
+    public static void verUsuarios(SiteTurismo site) {
         Map<String, Usuario> mapa = site.getMap();
 
         System.out.println("Conteúdo do Map:");
@@ -23,10 +23,9 @@ public class SiteViews {
             Usuario usuario = entry.getValue();
 
             System.out.println("email: " + chave);
-            System.out.println("nome: " + usuario.getNome()); // Aqui depende da implementação do método toString() em Usuario
+            System.out.println("nome: " + usuario.getNome()); 
             System.out.println("--------");
         }
     }
 
-    
 }
